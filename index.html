@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<body style="background-color: #fafafa;"></body>
-
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Online Portfolio</title>
+    <style>
+        body {
+            background-color: #fafafa;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        h1, h2, p {
+            text-align: center;
+        }
+        a {
+            color: #1a73e8;
+        }
+        .dark-mode a {
+            color: #8ab4f8;
+        }
+        .toggle-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .dark-mode .toggle-button {
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center;">My Online HTML Portfolio</h1>
+    <h1>My Online HTML Portfolio</h1>
     <hr>
+
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
     <h2>About Me</h2>
     <p>Hi, I'm John Angelo P David. You can call me Jad. This is my version of "Hello World" in the form of "About Me".</p>
     <p>I am 21 years old from BSIT 1A and currently studying at University of Immaculate Conception.</p>
-</ul>    
+</ul>       
     <p>You can visit my socials here:</p>
 
     <p><a href="https://github.com/JadDavidIsReal/AboutMe.github.io">My GitHub</a></p>
@@ -58,10 +89,13 @@
         <li>Ability to sit comfortably in silence</li>
         <li>Basic camera work</li>
     </ul>
-
     <hr>
-    <p style="text-align: center;">End.</p>
+    <p>End.</p>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
-</html>
-
-
+</
