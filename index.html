@@ -9,25 +9,17 @@
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
         h1 {
             text-align: center;
-            margin: 20px 0;
+            margin: 0;
         }
-        h2 {
-            margin: 20px 0 10px;
-        }
-        p, ul {
-            margin: 10px 20px;
+        h2, p {
+            text-align: left;
+            margin-left: 0;
         }
         a {
             color: #8ab4f8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
         }
         .toggle-button {
             padding: 10px;
@@ -38,8 +30,8 @@
             font-size: 16px;
             border-radius: 5px;
             position: fixed;
-            top: 10px;
             left: 10px;
+            top: 10px;
         }
         .dark-mode .toggle-button {
             background-color: #333;
@@ -49,9 +41,6 @@
             position: relative;
             padding: 10px;
         }
-        hr {
-            border: 1px solid #333;
-        }
     </style>
 </head>
 <body class="dark-mode">
@@ -60,13 +49,20 @@
         <h1>My Online Github Portfolio</h1>
     </div>
     <hr>
+
+
     <h2>About Me</h2>
     <p>Hi, I'm John Angelo P David. You can call me Jad. This is my version of "Hello World" in the form of "About Me".</p>
     <p>I am 21 years old from BSIT 1A and currently studying at University of Immaculate Conception.</p>
+</ul>       
     <p>You can visit my socials here:</p>
+
     <p><a href="https://github.com/JadDavidIsReal/AboutMe.github.io" target="_blank">My GitHub</a></p>
     <p><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580" target="_blank">My Coursera</a></p>
     <p><a href="https://www.linkedin.com/in/john-angelo-david-698075321/" target="_blank">My LinkedIn</a></p>
+
+
+
     <h2>Favorites</h2>
     <ul>
         <li>Gym</li>
@@ -76,6 +72,7 @@
         <li>Running long distances</li>
         <li>Self-isolation</li>
     </ul>
+
     <h2>School Projects</h2>
     <p>Here are some projects I've done in the past worth sharing:</p>
     <ul>
@@ -86,6 +83,7 @@
         <li>Prepared and facilitated a school for NCII accreditation readiness</li>
         <li>Assisted in facilitating numerous events on technical operations</li>
     </ul>
+
     <h2>Talents</h2>
     <p>I excel in the following areas:</p>
     <ul>
@@ -98,10 +96,10 @@
     </ul>
     <hr>
     <p style="text-align: center;">Fin.</p>
+
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
     </script>
 </body>
-</html>
