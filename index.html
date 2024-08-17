@@ -6,13 +6,9 @@
     <title>My Online Portfolio</title>
     <style>
         body {
-            background-color: #fafafa;
-            color: #333;
-            font-family: Arial, sans-serif;
-        }
-        .dark-mode {
             background-color: #121212;
             color: #ffffff;
+            font-family: Arial, sans-serif;
         }
         h1 {
             text-align: center;
@@ -23,25 +19,23 @@
             margin-left: 0;
         }
         a {
-            color: #1a73e8;
-        }
-        .dark-mode a {
             color: #8ab4f8;
         }
         .toggle-button {
             padding: 10px;
             cursor: pointer;
             border: none;
-            background-color: #333;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             font-size: 16px;
             border-radius: 5px;
             position: absolute;
-            left: 0;
+            left: 10px;
+            top: 10px;
         }
         .dark-mode .toggle-button {
-            background-color: #fff;
-            color: #333;
+            background-color: #333;
+            color: #fff;
         }
         .header-container {
             position: relative;
@@ -49,7 +43,7 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <div class="header-container">
         <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
         <h1>My Online HTML Portfolio</h1>
