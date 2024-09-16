@@ -1,39 +1,75 @@
-
-img {
-    height: 150px;
+/* General body and font styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-
-.description {
-    font-size: 20px;
+h1, h2, h3, h4 {
+    color: #ffffff;
 }
 
-
-#cook-time {
-    font-weight: bold;
+a {
+    color: #8ab4f8;
+    text-decoration: none;
 }
 
-
-p {
-    color: gray;
+a:hover {
+    text-decoration: underline;
 }
 
-
-.external-link {
-    color: SeaGreen;
+/* Header and toggle button styles */
+.header-container {
+    position: relative;
+    padding: 10px;
 }
 
-
-h1, h2, p, li {
-    font-family: Helvetica;
+.toggle-button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 
-
-.ingredients li {
-    list-style: square;
+.dark-mode .toggle-button {
+    background-color: #333;
+    color: #fff;
 }
 
+/* Blog image styles */
+.blog-image {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
 
-p.time {
-    color: gray;
+/* Light mode styles */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light-mode a {
+    color: #0000ff;
+}
+
+/* List styles */
+ul {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
 }
