@@ -50,24 +50,17 @@
         .light-mode a {
             color: #0000ff;
         }
-        /* New styles for profile picture */
-        .profile-container {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-        }
-        .profile-picture {
+        .profile-image {
             width: 100px;
             height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 20px;
+            object-fit: cover; /* Crop to 1x1 aspect ratio */
+            border-radius: 50%; /* Optional: make it circular */
+            float: right;
+            margin-left: 20px; /* Space between the text and image */
         }
-        ul {
-            margin-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
+        /* Ensure content doesn't overlap with image */
+        .content {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -76,60 +69,58 @@
         <button class="toggle-button" onclick="toggleDarkMode()">Dark/light</button>
         <h1>My Online HTML Portfolio</h1>
     </div>
+    <hr>
 
-    <!-- Profile Picture and Introduction -->
-    <div class="profile-container">
-        <img src="pic.jfif" alt="Profile Picture" class="profile-picture">
-        <div>
-            <h2>About Me</h2>
-            <p>Hi, I'm John Angelo P David. You can call me Jad. This is my version of "Hello World" in the form of "About Me".</p>
-            <p>I am 22 years old, from BSIT 1A and currently studying at the University of Immaculate Conception.</p>
-        </div>
+    <div class="content">
+        <img src="pic.jfif" alt="Profile Picture" class="profile-image">
+        <h2>About Me</h2>
+        <p>Hi, I'm John Angelo P David. You can call me Jad. This is my version of "Hello World" in the form of "About Me".</p>
+        <p>I am 22 years old, from BSIT 1A and currently studying at the University of Immaculate Conception.</p>
+
+        <h2>Social Links</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/chart-reuse-698075321/">My LinkedIn</a></li>
+            <li><a href="https://github.com/JadDavidIsReal/AboutMe.github.io">My GitHub</a></li>
+            <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">My Coursera</a></li>
+            <li><a href="recipees.html" target="_blank">Healthy Recipes</a></li>
+            <li><a href="fashionn.html" target="_blank">Fashion Blog</a></li>
+        </ul>
+
+        <h2>Favorites</h2>
+        <ul>
+            <li>Gym</li>
+            <li>Boxing</li>
+            <li>Driving</li>
+            <li>Learning practical skills</li>
+            <li>Running long distances</li>
+            <li>Self-isolation</li>
+        </ul>
+
+        <h2>School Projects</h2>
+        <p>Here are some projects I've done in the past worth sharing:</p>
+        <ul>
+            <li>Grinded some certifications online</li>
+            <li>Made and launched my art portfolio before (discontinued)</li>
+            <li>Deployed a website that a local school uses</li>
+            <li>Conducted on-site inventory for IT equipment and office infrastructure</li>
+            <li>Prepared and facilitated a school for NCII accreditation readiness</li>
+            <li>Assisted in facilitating numerous events on technical operations</li>
+        </ul>
+
+        <h2>Talents</h2>
+        <p>I excel in the following areas:</p>
+        <ul>
+            <li>Well-versed in brainstorming and analytical comprehension</li>
+            <li>High Adversity Quotient (AQ): Comfortable with stress</li>
+            <li>Some digital art design skills</li>
+            <li>Engaging in civil debate on relevant topics</li>
+            <li>Ability to sit comfortably in silence</li>
+            <li>Basic camera work</li>
+        </ul>
     </div>
 
-    <h2>Social Links</h2>
-    <ul>
-        <li><a href="https://www.linkedin.com/in/chart-reuse-698075321/">My LinkedIn</a></li>
-        <li><a href="https://github.com/JadDavidIsReal/AboutMe.github.io">My GitHub</a></li>
-        <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">My Coursera</a></li>
-        <li><a href="recipees.html" target="_blank">Healthy Recipes</a></li>
-        <li><a href="fashionn.html" target="_blank">Fashion Blog</a></li>
-    </ul>
-
-    <h2>Favorites</h2>
-    <ul>
-        <li>Gym</li>
-        <li>Boxing</li>
-        <li>Driving</li>
-        <li>Learning practical skills</li>
-        <li>Running long distances</li>
-        <li>Self-isolation</li>
-    </ul>
-
-    <h2>School Projects</h2>
-    <p>Here are some projects I've done in the past worth sharing:</p>
-    <ul>
-        <li>Grinded some certifications online</li>
-        <li>Made and launched my art portfolio before (discontinued)</li>
-        <li>Deployed a website that a local school uses</li>
-        <li>Conducted on-site inventory for IT equipment and office infrastructure</li>
-        <li>Prepared and facilitated a school for NCII accreditation readiness</li>
-        <li>Assisted in facilitating numerous events on technical operations</li>
-    </ul>
-
-    <h2>Talents</h2>
-    <p>I excel in the following areas:</p>
-    <ul>
-        <li>Well-versed in brainstorming and analytical comprehension</li>
-        <li>High Adversity Quotient (AQ): Comfortable with stress</li>
-        <li>Some digital art design skills</li>
-        <li>Engaging in civil debate on relevant topics</li>
-        <li>Ability to sit comfortably in silence</li>
-        <li>Basic camera work</li>
-    </ul>
-
     <hr>
-    <p style="text-align: center;">End.</p>
+    <p style="text-align: center;">End</p>
 
     <script>
         function toggleDarkMode() {
