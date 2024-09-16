@@ -1,4 +1,4 @@
-/* General body and font styles */
+
 body {
     background-color: #121212;
     color: #ffffff;
@@ -20,7 +20,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header and toggle button styles */
+
 .header-container {
     position: relative;
     padding: 10px;
@@ -44,7 +44,7 @@ a:hover {
     color: #fff;
 }
 
-/* Blog image styles */
+
 .blog-image {
     display: block;
     width: 100%;
@@ -54,7 +54,7 @@ a:hover {
     margin: 10px 0;
 }
 
-/* Light mode styles */
+
 .light-mode {
     background-color: #ffffff;
     color: #000000;
@@ -64,7 +64,7 @@ a:hover {
     color: #0000ff;
 }
 
-/* List styles */
+
 ul {
     margin-left: 20px;
     padding-left: 0;
