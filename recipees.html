@@ -67,6 +67,44 @@
             height: auto;
             border-radius: 8px;
         }
+
+        /* Media Query for small screens */
+        @media only screen and (max-width: 768px) {
+            .meal-images {
+                flex-direction: column;
+                align-items: center;
+            }
+            .meal-images img {
+                width: 100%; /* Full-width images on smaller screens */
+                margin-bottom: 15px;
+            }
+            ul {
+                margin-left: 0;
+            }
+            .toggle-button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        /* Media Query for extra small screens */
+        @media only screen and (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            p, li {
+                font-size: 16px;
+            }
+            .toggle-button {
+                left: 5px;
+                top: 5px;
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
     </style>
 </head>
 <body class="dark-mode">
