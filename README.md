@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
+
     <title>Welcome to My Portfolio</title>
-</head>
-<body>
+
 <h1>Welcome to My Portfolio</h1>
 
 <p>I am excited to share my professional portfolio with you, a digital platform that highlights my skills and accomplishments in the field of data analysis and technology. This online platform is a culmination of my dedication, perseverance, and passion for creating innovative solutions. As you explore this website, you will discover a curated selection of projects that demonstrate my ability to design, develop, and deliver high-quality data analysis, data visualization, and software applications that exceed expectations.</p>

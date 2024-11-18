@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Angelo P. David | Captivating Portfolio</title>
     <title>John Angelo P. David | Portfolio</title>
     <link rel="stylesheet" href="/static/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
 </head>
 <body class="dark-mode">
+<body>
     <header>
+        <div class="hamburger-icon"></div>
         <nav>
             <ul><link rel="stylesheet" href="static/css/styles.css">
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="about-me">
+            <h2>The Visionary</h2>
             <h2>About Me</h2>
             <img src="images/Screenshot_14.png" alt="Profile Picture" class="profile-image">
+            <p>Greetings! I'm John Angelo P. David, an ingenious developer with an insatiable thirst for innovation. Currently, I'm pursuing a degree in Information Technology at the University of Immaculate Conception.</p>
+            <p>Fueled by curiosity and an unwavering desire to make a profound impact, I relentlessly seek opportunities to learn and grow in the tech industry.</p>
             <p>Hello! I'm John Angelo P. David, a passionate developer with a keen interest in creating innovative solutions. I am currently pursuing a degree in Information Technology at the University of Immaculate Conception.</p>
             <p>Driven by curiosity and a desire to make a difference, I constantly seek opportunities to learn and grow in the tech industry.</p>
         </section>
         <section id="portfolio">
+            <h2>Mesmerizing Projects</h2>
+            <p>Behold! Here's a showcase of my captivating projects that exemplify my skills and dedication:</p>
             <h2>Portfolio</h2>
             <p>Here's a showcase of my projects that highlight my skills and dedication:</p>
             <ul>
                 <li>
                     <a href="recipees.html" target="_blank">
                         <img src="images/Screenshot_15.png" alt="Recipees Screenshot">
+                        <h3>Nourishing Delights</h3>
+                        <p>An enchanting site offering delectable and nutritious recipes for health connoisseurs.</p>
                         <h3>Healthy Recipes</h3>
                         <p>An interactive site offering delicious and nutritious recipes for health enthusiasts.</p>
                     </a>
@@ -39,6 +49,8 @@
                 <li>
                     <a href="fashionn.html" target="_blank">
                         <img src="images/Screenshot_16.png" alt="Fashion Blog Screenshot">
+                        <h3>Trendsetting Blog</h3>
+                        <p>A stylish blog providing exclusive insights and trends from the fashion world.</p>
                         <h3>Fashion Blog</h3>
                         <p>A stylish blog providing insider tips and trends from the fashion world.</p>
                     </a>
@@ -47,12 +59,14 @@
                     <a href="indexact2.html" target="_blank">
                         <img src="images/Screenshot_17.png" alt="Olivia Woodruff's Portfolio Screenshot">
                         <h3>Olivia Woodruff's Portfolio</h3>
+                        <p>A captivating portfolio showcasing the work of designer Olivia Woodruff.</p>
                         <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
                     </a>
                 </li>
                 <li>
                     <a href="https://jaddavidisreal.github.io/chartbot/" target="_blank">
                         <img src="images/Screenshot_18.png" alt="Chartbot Screenshot">
+                        <h3>My Personal Chatbot Odyssey</h3>
                         <h3>My Personal Chatbot Project</h3>
                         <p>An AI-powered chatbot designed to assist users with data-driven insights.</p>
                     </a>
@@ -60,6 +74,8 @@
             </ul>
         </section>
         <section id="skills">
+            <h2>Prestigious Abilities</h2>
+            <p>I bring an array of exceptional skills to the table, including:</p>
             <h2>Skills</h2>
             <p>I bring a diverse set of skills to the table, including:</p>
             <ul>
@@ -72,9 +88,12 @@
             </ul>
         </section>
         <section id="contact">
+            <h2>Let's Conspire</h2>
             <h2>Contact</h2>
             <p>Feel free to reach out to me through any of the following platforms:</p>
             <ul>
+                <li><a href="https://www.linkedin.com/in/john-angelo-david/">LinkedIn</a></li>
+                <li><a href="https://github.com/JadDavidIsReal">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/chart-reuse-698075321/">LinkedIn</a></li>
                 <li><a href="https://github.com/JadDavidIsReal/AboutMe.github.io">GitHub</a></li>
                 <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">Coursera</a></li>
@@ -82,14 +101,18 @@
         </section>
     </main>
     <footer>
+        <p style="text-align: center;">Thank you for witnessing my captivating portfolio. Let's conspire and create something extraordinary together!</p>
         <p style="text-align: center;">Thank you for visiting my portfolio. Let's connect and create something amazing together!</p>
     </footer>
     <script>
         function toggleDarkMode() {
-            document.body.classList.toggle("light-mode");
+            document.body.classList.toggle("dark-mode");
         }
     </script>
 </body>
 </html>
+
+
+
 
 
