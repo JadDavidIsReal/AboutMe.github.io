@@ -4,144 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Blog</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        .header-container {
-            position: relative;
-            padding: 10px;
-            text-align: center;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        a {
-            color: #8ab4f8;
-            text-decoration: none;
-        }
-
-        .toggle-button {
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            background-color: #fff;
-            color: #333;
-            font-size: 16px;
-            border-radius: 5px;
-            position: absolute;
-            left: 10px;
-            top: 10px;
-        }
-
-        .dark-mode .toggle-button {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        .blog-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
-        h4 {
-            margin-top: 40px;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-
-        #contact {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        /* Media queries for responsiveness */
-        @media (max-width: 768px) {
-            h1, p, h2, h4, a {
-                font-size: 1.2rem;
-            }
-
-            ul {
-                padding-left: 15px;
-            }
-
-            .toggle-button {
-                left: 5px;
-                top: 5px;
-                font-size: 14px;
-            }
-
-            #contact {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1, p, h2, h4, a {
-                font-size: 1rem;
-            }
-
-            ul {
-                padding-left: 10px;
-            }
-
-            .toggle-button {
-                padding: 8px;
-                font-size: 12px;
-            }
-
-            #contact {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body class="dark-mode">
-    <div class="header-container">
-        <button class="toggle-button" onclick="toggleDarkMode()">Dark/light</button>
-        <a href="index.html">  Go back to My Portfolio</a>
-    </div>
+    <header>
+        <div class="header-container">
+            <button class="toggle-button" onclick="toggleDarkMode()">Dark/light</button>
+            <a href="../../index.html">  Go back to My Portfolio</a>
+        </div>
+    </header>
 
-    <br>
+    <main>
+        <h1>An Insider's Guide to <a href="https://en.wikipedia.org/wiki/New_York_Fashion_Week" target="_blank">NYFW</a></h1>
+        <img src="" alt="Guide Image" class="blog-image">
+        <p>NFYW can be both amazingly fun & incredibly overwhelming. Especially if you've never been. Luckily, I'm here to give you an insider's guide and make your first show a pleasurable experience. By taking my tips and tricks, and following your gut, you'll have an unforgettable experience!</p>
 
-    <h1>An Insider's Guide to <a href="https://en.wikipedia.org/wiki/New_York_Fashion_Week" target="_blank">NYFW</a></h1>
-    <img src="" alt="Guide Image" class="blog-image">
-    <p>NFYW can be both amazingly fun & incredibly overwhelming. Especially if you've never been. Luckily, I'm here to give you an insider's guide and make your first show a pleasurable experience. By taking my tips and tricks, and following your gut, you'll have an unforgettable experience!</p>
+        <section>
+            <h2>Getting Tickets & Picking the Shows</h2>
+            <img src="image-two.jpeg" alt="Getting Tickets" class="blog-image">
+            <p>If you're lucky or connected, you can get an invite sans the price tag. But I wasn't so lucky or connected my first 2 years so I'm here to help you out. First, plan out which shows are the most important to you and make a schedule and this is a biggie: SET A BUDGET. If you're worrying about blowing your cash the whole time you won't have fun. Then check out prices, days, and times and prioritize the designers you want to see most. Lastly, purchase your tickets and get excited!</p>
+        </section>
 
-    <h2>Getting Tickets & Picking the Shows</h2>
-    <img src="image-two.jpeg" alt="Getting Tickets" class="blog-image">
-    <p>If you're lucky or connected, you can get an invite sans the price tag. But I wasn't so lucky or connected my first 2 years so I'm here to help you out. First, plan out which shows are the most important to you and make a schedule and this is a biggie: SET A BUDGET. If you're worrying about blowing your cash the whole time you won't have fun. Then check out prices, days, and times and prioritize the designers you want to see most. Lastly, purchase your tickets and get excited!</p>
+        <section>
+            <h2>Dressing for the Shows</h2>
+            <img src="image-three.jpeg" alt="Dressing for Shows" class="blog-image">
+            <p>Always be true to your own sense of style; if you don't, you'll be uncomfortable the whole time and it will show. Remember, NYFW is about expressing yourself and taking in what the designers have chosen to express through their new lines. Also, it's important to wear shoes you'll be comfortable in all day. Obviously, you want to look good, but you'll be on your feet all day long, so be prepared.</p>
+        </section>
 
-    <h2>Dressing for the Shows</h2>
-    <img src="image-three.jpeg" alt="Dressing for Shows" class="blog-image">
-    <p>Always be true to your own sense of style; if you don't, you'll be uncomfortable the whole time and it will show. Remember, NYFW is about expressing yourself and taking in what the designers have chosen to express through their new lines. Also, it's important to wear shoes you'll be comfortable in all day. Obviously, you want to look good, but you'll be on your feet all day long, so be prepared.</p>
+        <section>
+            <h4>Related Contents</h4>
+            <ul>
+                <li>When Print Is Too Much</li>
+                <li>The Overalls Trend</li>
+                <li>Fall's It Color: Blush</li>
+            </ul>
+        </section>
+    </main>
 
-    <h4>Related Contents</h4>
-    <ul>
-        <li>When Print Is Too Much</li>
-        <li>The Overalls Trend</li>
-        <li>Fall's It Color: Blush</li>
-    </ul>
-
-    <div id='contact'>
-        <p><strong>Email:</strong> isa@fashionblog.com | <strong>Phone:</strong> 917-555-1098 | <strong>Address:</strong> 371 284th St., New York, NY, 10001</p>
-    </div>
+    <footer>
+        <div id='contact'>
+            <p><strong>Email:</strong> isa@fashionblog.com | <strong>Phone:</strong> 917-555-1098 | <strong>Address:</strong> 371 284th St., New York, NY, 10001</p>
+        </div>
+    </footer>
 
     <script>
         function toggleDarkMode() {
@@ -150,3 +54,5 @@
     </script>
 </body>
 </html>
+
+

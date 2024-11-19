@@ -12,13 +12,25 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+main {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
 header {
     background-color: #333;
     color: #fff;
-    position: relative;
+    position: fixed;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -104,6 +116,8 @@ nav ul li a:hover::after {
 }
 
 .toggle-button {
+    position: left;
+    right: 0;
     background-color: #555;
     color: #fff;
     font-size: 16px;
@@ -128,7 +142,7 @@ nav ul li a:hover::after {
     transition: color 0.3s;
 }
 
-.dark-mode #portfolio {
+.dark-mode #Schoolworks {
     background-color: #333;
     display: flex;
     flex-direction: column;
@@ -157,7 +171,7 @@ nav ul li a:hover::after {
     transition: color 0.3s;
 }
 
-.light-mode #portfolio {
+.light-mode #Schoolworks {
     background-color: #eaeaea;
     display: flex;
     flex-direction: column;
@@ -192,11 +206,32 @@ button:hover, a:hover {
     color: #fff;
 }
 
-#about-me, #portfolio, #skills, #contact {
+#about-me {
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+}
+
+#Schoolworks {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#skills {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 footer {
@@ -217,3 +252,62 @@ footer a {
 footer a:hover {
     color: #fff;
 }
+
+
+
+
+#notable-projects {
+    background-image: linear-gradient(to bottom, #0077cc, #333);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notable-projects h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#notable-projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#notable-projects li {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    width: calc(50% - 10px);
+}
+
+#notable-projects a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    background-color: rgba(0, 119, 204, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#notable-projects a:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 119, 204, 0.2);
+}
+
