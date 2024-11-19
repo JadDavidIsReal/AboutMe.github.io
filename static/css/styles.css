@@ -1,8 +1,16 @@
+:root {
+    --primary-color: #0077cc;
+    --secondary-color: #00b894;
+    --tertiary-color: #262626;
+    --quaternary-color: #f0f0f0;
+}
+
+
+
 html {
     scroll-behavior: smooth;
     transition: background-color 0.3s, color 0.3s;
 }
-
 
 body {
     margin: 0;
@@ -47,7 +55,7 @@ header::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(135deg, #0077cc 0%, #00b894 100%);
+    background: linear-gradient(135deg, #3785c9 0%, #00b894 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -106,7 +114,7 @@ nav ul li a::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #0077cc;
+    background-color: #cc0000;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -212,19 +220,58 @@ button:hover, a:hover {
     margin: 0 auto;
     text-align: left;
 }
-
 #Schoolworks {
+    list-style-type: none;
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+#Schoolworks:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #2f2f2f;
+    color: #fff;
+}
+
+#Schoolworks li {
+    background-color: #2f2f2f;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#Schoolworks li img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    display: block;
+    margin: 0 auto;
+    image-rendering: crisp-edges;
+    border-radius: 10px;
+    object-position: center;
+}
+
 
 #skills {
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
+}
+
+#skills li:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 #contact {
@@ -236,6 +283,9 @@ button:hover, a:hover {
     margin: 0 auto;
 }
 
+#contact li:not(:last-child) {
+    margin-bottom: 10px;
+}
 
 footer {
     text-align: center;
@@ -262,10 +312,10 @@ footer a:hover {
 #notable-projects {
     background-image: linear-gradient(to bottom, #0077cc, #333);
     color: #fff;
-    padding: 20px;
+    padding: 55px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
+    margin: 60px;
     width: 600px;
     text-align: center;
     display: flex;
@@ -286,7 +336,7 @@ footer a:hover {
 #notable-projects ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 150;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -295,7 +345,12 @@ footer a:hover {
 #notable-projects li {
     margin-bottom: 10px;
     margin-right: 20px;
-    width: calc(50% - 10px);
+    width: calc(90% - 10px);
+    margin: 10px;
+}
+
+#notable-projects li:not(:last-child) {
+    margin-bottom: 30px;
 }
 
 #notable-projects a {
@@ -313,4 +368,8 @@ footer a:hover {
     color: #f2f2f2;
     background-color: rgba(0, 119, 204, 0.2);
 }
+
+
+
+
 
