@@ -7,62 +7,74 @@
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body class="dark-mode">
-    <div class="header-container">
-        <button class="toggle-button" onclick="toggleDarkMode()">Dark/light</button>
-        <h1>Healthy Recipes</h1>
-    </div>
-    <hr>
+    <header style="height: 50px; display: flex; justify-content: center; align-items: center;">
+        <h1 style="margin-top: 0px; flex: 1; text-align: center;">Healthy Recipes</h1>
+        <div style="margin-top: 0px;">
+            <button class="toggleDarkMode" style="float: right;" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+    </header>
+    <section>
+        <main style="margin-top: 0px;"></main>
+        <h2>Healthy Breakfast</h2>
+            <div class="meal-images">
+                <img src="../../static/images/friend egg and avocado toast.jpg" alt="Healthy Breakfast" style="width: 50px; height: 50px;">
+            </div>
+            <ul>
+                <li>Avocado toast with a fried egg and a sprinkle of chili flakes</li>
+                <li>Overnight oats with chia seeds, almond milk, and fresh berries</li>
+                <li>Green smoothie with spinach, kale, banana, and almond butter</li>
+                <li>Greek yogurt with honey, granola, and sliced almonds</li>
+                <li>Whole-grain pancakes topped with fresh blueberries and a drizzle of maple syrup</li>
+            </ul>
+        </section>
 
-    <h2>Healthy Breakfast</h2>s
-    <div class="meal-images">
-        <img src="images/friend egg and avocado toast.jpg" alt="Healthy Breakfast">
-    </div>
-    <ul>
-        <li>Avocado toast with a fried egg and a sprinkle of chili flakes</li>
-        <li>Overnight oats with chia seeds, almond milk, and fresh berries</li>
-        <li>Green smoothie with spinach, kale, banana, and almond butter</li>
-        <li>Greek yogurt with honey, granola, and sliced almonds</li>
-        <li>Whole-grain pancakes topped with fresh blueberries and a drizzle of maple syrup</li>
-    </ul>
+        <section>
+            <h2>Lunch Options</h2>
+            <div class="meal-images">
+                <img src="../../static/images/spicy roasted chickpea salad bowl.jpg" alt="Lunch Options" style="width: 50px; height: 50px;">
+            </div>
+            <ul>
+                <li>Grilled chicken salad with mixed greens, cherry tomatoes, and a balsamic vinaigrette</li>
+                <li>Quinoa bowl with roasted vegetables, chickpeas, and tahini dressing</li>
+                <li>Tuna salad sandwich on whole-grain bread with avocado slices</li>
+                <li>Lentil soup with carrots, celery, and a slice of whole-grain bread</li>
+                <li>Turkey and avocado wrap with spinach and hummus</li>
+            </ul>
+        </section>
 
-    <h2>Lunch Options</h2>
-    <div class="meal-images">
-        <img src="images/spicy roasted chickpea salad bowl.jpg" alt="Lunch Options">
-    </div>
-    <ul>
-        <li>Grilled chicken salad with mixed greens, cherry tomatoes, and a balsamic vinaigrette</li>
-        <li>Quinoa bowl with roasted vegetables, chickpeas, and tahini dressing</li>
-        <li>Tuna salad sandwich on whole-grain bread with avocado slices</li>
-        <li>Lentil soup with carrots, celery, and a slice of whole-grain bread</li>
-        <li>Turkey and avocado wrap with spinach and hummus</li>
-    </ul>
+        <section>
+            <h2>Dinner Ideas</h2>
+            <div class="meal-images">
+                <img src="../../static/images/ovenbaked salmon.jpg" alt="Dinner Ideas" style="width: 50px; height: 50px;">
+            </div>
+            <ul>
+                <li>Baked salmon with roasted asparagus and quinoa</li>
+                <li>Stir-fried tofu with mixed vegetables and brown rice</li>
+                <li>Grilled shrimp skewers with a side of couscous and steamed broccoli</li>
+                <li>Vegetarian chili with black beans, kidney beans, and diced tomatoes</li>
+                <li>Whole-wheat pasta with tomato basil sauce and a side of steamed spinach</li>
+            </ul>
+        </section>
 
-    <h2>Dinner Ideas</h2>
-    <div class="meal-images">
-        <img src="images/ovenbaked salmon.jpg" alt="Dinner Ideas">
-    </div>
-    <ul>
-        <li>Baked salmon with roasted asparagus and quinoa</li>
-        <li>Stir-fried tofu with mixed vegetables and brown rice</li>
-        <li>Grilled shrimp skewers with a side of couscous and steamed broccoli</li>
-        <li>Vegetarian chili with black beans, kidney beans, and diced tomatoes</li>
-        <li>Whole-wheat pasta with tomato basil sauce and a side of steamed spinach</li>
-    </ul>
+        <section>
+            <h2>Healthy Snacks</h2>
+            <div class="meal-images">
+                <img src="../../static/images/apple slices.jpg" alt="Healthy Snacks" style="width: 50px; height: 50px;">
+            </div>
+            <ul>
+                <li>Apple slices with almond butter</li>
+                <li>Hummus with carrot sticks and cucumber slices</li>
+                <li>Trail mix with mixed nuts, seeds, and dried fruit</li>
+                <li>Rice cakes topped with avocado and a sprinkle of sea salt</li>
+                <li>Greek yogurt with a handful of fresh raspberries</li>
+            </ul>
+        </section>
+    </main>
 
-    <h2>Healthy Snacks</h2>
-    <div class="meal-images">
-        <img src="images/apple slices.jpg" alt="Healthy Snacks">
-    </div>
-    <ul>
-        <li>Apple slices with almond butter</li>
-        <li>Hummus with carrot sticks and cucumber slices</li>
-        <li>Trail mix with mixed nuts, seeds, and dried fruit</li>
-        <li>Rice cakes topped with avocado and a sprinkle of sea salt</li>
-        <li>Greek yogurt with a handful of fresh raspberries</li>
-    </ul>
-
-    <hr>
-    <p style="text-align: center;">End.</p>
+    <footer>
+        <hr>
+        <p style="text-align: center;">End.</p>
+    </footer>
 
     <script>
         function toggleDarkMode() {

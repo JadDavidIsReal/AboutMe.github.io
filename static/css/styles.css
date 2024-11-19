@@ -14,7 +14,7 @@ body {
 }
 
 main {
-    margin-top: 60px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -396,4 +396,3 @@ footer a:hover {
 .profile-image[alt="Preview Image"] {
     visibility: hidden;
 }
-
