@@ -9,6 +9,8 @@ body {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     transition: background-color 0.3s, color 0.3s;
+    background-image: linear-gradient(to bottom, rgba(79, 164, 255, 0), rgba(63, 239, 255, 0.162));
+    background-attachment: fixed;
 }
 
 main {
@@ -24,20 +26,20 @@ main {
 
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #007957;
+    color: #ffffff;
     position: fixed;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 3px solid #0077cc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.495);
+    border-bottom: 3px solid #00ffb7;
     width: 100%;
     margin: 0;
     flex-wrap: wrap;
-    background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.6));
+    background-image: linear-gradient(to bottom, rgba(39, 132, 153, 0.9), rgba(51, 51, 51, 0.6));
     transition: background-image 0.3s ease;
 }
 
@@ -48,7 +50,7 @@ header::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(135deg, #3785c9 0%, #00b894 100%);
+    background: linear-gradient(135deg, #3785c9 0%, #2ab5e3 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -107,7 +109,7 @@ nav ul li a::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #cc0000;
+    background-color: #ffffff;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -135,12 +137,12 @@ nav ul li a:hover::after {
 }
 
 .dark-mode {
-    background-color: #262626;
+    background-color: #000000;
     color: #fff;
 }
 
 .dark-mode a {
-    color: #00b894;
+    color: #1db697;
     transition: color 0.3s;
 }
 
@@ -169,7 +171,7 @@ nav ul li a:hover::after {
 }
 
 .light-mode a {
-    color: #0077cc;
+    color: #050631;
     transition: color 0.3s;
 }
 
@@ -229,12 +231,14 @@ button:hover, a:hover {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 8px 16px rgba(9, 95, 110, 0.248);
 }
 
 #Schoolworks:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
     background-color: #2f2f2f;
     color: #fff;
+    box-shadow: 0 8px 16px rgba(18, 97, 111, 0.107);
 }
 
 #Schoolworks li {
@@ -258,12 +262,20 @@ button:hover, a:hover {
     object-position: center;
 }
 
-
 #skills {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 25px;
+    max-width: 650px;
+    margin: 20px auto;
     text-align: center;
+    background: linear-gradient(to top, rgba(108, 160, 181, 0.9), rgba(1, 117, 134, 0.116));
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#skills:hover {
+    background-color: #6a696e;
+    box-shadow: 0 8px 16px rgba(33, 189, 217, 0.47);
 }
 
 #skills li:not(:last-child) {
@@ -364,6 +376,7 @@ footer a:hover {
 #notable-projects a:hover {
     color: #f2f2f2;
     background-color: rgba(0, 119, 204, 0.2);
+    box-shadow: 0 8px 16px rgb(0, 217, 255);
 }
 
 .profile-image {
@@ -383,3 +396,4 @@ footer a:hover {
 .profile-image[alt="Preview Image"] {
     visibility: hidden;
 }
+
