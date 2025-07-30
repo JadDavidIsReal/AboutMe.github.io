@@ -14,17 +14,21 @@
                 <li><a href="#Schoolworks">Portfolio</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact-me">Contact Me!</a></li>
-                <li><button onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
+                <li><button id="darkModeToggler">Toggle Dark Mode</button></li>
             </ul>
         </nav>
     </header>
+    <div id="hero">
+        <div class="hero-text">
+            <h1>John Angelo P. David</h1>
+            <p>Aspiring Web Developer & IT Specialist</p>
+        </div>
+    </div>
     <main>
-        <img src="preview.jfif" alt="Preview Image" class="profile-image">
         <section id="about-me">
             <h2>About Me</h2>
             <img src="static/images/pfp.jfif" alt="Profile Picture" class="profile-image" >
             <hr>
-        </hr>
             <p>I'm John Angelo P. David, a detail-oriented individual with a strong passion for web development and design. I'm currently pursuing a degree in Information Technology at the University of Immaculate Conception.</p>
             <p>As a dedicated individual, I'm always seeking opportunities to improve my skills and create innovative solutions. I'm excited to share my work with you and explore the possibilities of collaboration.</p>
             
@@ -61,7 +65,7 @@
             <p>Here are some of the projects I've worked on worth showcasing:</p>
             <ul>
                 <li>
-                    <a href="https://jaddavidisreal.github.io/chartbot/">Chartbot: An AI Chatbot (Requires a valid OpenAI API Key)</a></a>
+                    <a href="https://jaddavidisreal.github.io/chartbot/">Chartbot: An AI Chatbot (Requires a valid OpenAI API Key)</a>
                 </li>
                 <li>
                     <a href="https://cert.efset.org/kbk3sf">My Official EFSET Certificate</a>
@@ -74,19 +78,15 @@
         <section id="skills">
             <h2>Technical Skills</h2>
             <hr>
-        </hr>
             <p>My technical expertise spans various domains:</p>
-            <ul>
-                <li>
-                    <ul style="list-style-type: disc;">
-                        <li>Proficient in web development using HTML, CSS, Python, WordPress, and Wix</li>
-                        <li>Skilled in data cleaning, management, and visualization using Excel, Google Sheets, Power BI, and SQL</li>
-                        <li>Familiar with OpenAI functions and foundational machine learning concepts</li>
-                        <li>Extensive knowledge in PC building, diagnostics, hardware repair, and cable management</li>
-                        <li>Working understanding of PBX/PABX systems, networking, and peripheral customization</li>
-                        <li>Experience in photography, including camera crane operation, and basic Adobe Premiere Pro editing</li>
-                        <li>Proficient in digital art creation using IbisPaint, blending creativity with technical expertise</li>
-                </li>
+            <ul style="list-style-type: disc;">
+                <li>Proficient in web development using HTML, CSS, Python, WordPress, and Wix</li>
+                <li>Skilled in data cleaning, management, and visualization using Excel, Google Sheets, Power BI, and SQL</li>
+                <li>Familiar with OpenAI functions and foundational machine learning concepts</li>
+                <li>Extensive knowledge in PC building, diagnostics, hardware repair, and cable management</li>
+                <li>Working understanding of PBX/PABX systems, networking, and peripheral customization</li>
+                <li>Experience in photography, including camera crane operation, and basic Adobe Premiere Pro editing</li>
+                <li>Proficient in digital art creation using IbisPaint, blending creativity with technical expertise</li>
             </ul>
         </section>
         <section id="contact-me">
@@ -95,7 +95,6 @@
             <ul>
                 <li><a href="https://github.com/JadDavidIsReal">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/john-angelo-david-698075321/">LinkedIn</a></li>
-                <li><a href="https://github.com/JadDavidIsReal/AboutMe.github.io">GitHub</a></li>
                 <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">Coursera</a></li>
             </ul>
         </section>
@@ -103,12 +102,7 @@
     <footer>
         <p style="text-align: center;">Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
     </footer>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            document.body.classList.toggle("light-mode");
-        }
-    </script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
 
