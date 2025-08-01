@@ -1,70 +1,16 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    <title>Welcome to My Portfolio</title>
 
-## Available Scripts
+<h1>Welcome to My Portfolio</h1>
 
-In the project directory, you can run:
+<p>I am excited to share my professional portfolio with you, a digital platform that highlights my skills and accomplishments in the field of data analysis and technology. This online platform is a culmination of my dedication, perseverance, and passion for creating innovative solutions. As you explore this website, you will discover a curated selection of projects that demonstrate my ability to design, develop, and deliver high-quality data analysis, data visualization, and software applications that exceed expectations.</p>
 
-### `npm start`
+<p>My journey in the tech industry began with a fascination for the potential of technology to improve people's lives. As I delved deeper, I discovered a world of possibilities, where code, data, and creativity converged to produce something truly remarkable. This sparked a desire in me to contribute to this ecosystem, to create data analysis and software applications that would make a meaningful impact on people's lives. And thus, my professional journey began.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>Today, I am proud to say that I have made significant strides in my career, with a strong foundation in data analysis, data visualization, software development, and a keen sense of innovation. My expertise spans a range of programming languages, including but not limited to, R, Python, JavaScript, and SQL. I am also well-versed in a variety of development frameworks, including React, Angular, and Vue. Furthermore, I have hands-on experience in building PCs on every generation, diagnosing, research, PBX/PABX rough understanding, networking, server cable management, data analytics, excel proficiency, mac installation, ICT offices configuration, and technical support.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>Throughout my career, I have been driven by a passion for creating data analysis and software applications that are both functional and visually appealing. I believe that data analysis and software should not only serve a purpose but also be a joy to use. This philosophy has guided my approach to data analysis and software development, and I am proud to say that my projects reflect this commitment to excellence.</p>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>In this portfolio, you will find a selection of projects that demonstrate my skills and accomplishments. These projects showcase my ability to design and develop data analysis and software applications that are both functional and visually appealing. I invite you to explore this website, to learn more about my experience, skills, and accomplishments. I am confident that you will find my work to be of the highest quality, and I look forward to the opportunity to collaborate with you on your next project.</p>
+</body>
+</html>
