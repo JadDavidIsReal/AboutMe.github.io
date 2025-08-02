@@ -93,10 +93,6 @@ nav ul li {
     margin: 0 1.5rem;
 }
 
-nav ul li:last-child {
-    margin-left: auto;
-    margin-right: 0;
-}
 
 nav ul li a {
     text-decoration: none;
@@ -137,46 +133,33 @@ nav ul li a:hover::after {
 }
 
 #darkModeToggler {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid transparent;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    background: none;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 8px 12px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 2rem;
 }
 
-#darkModeToggler:hover {
-    transform: scale(1.1);
+body.light-mode #darkModeToggler {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
 }
 
-#darkModeToggler::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    transition: all 0.5s ease;
+body.dark-mode #darkModeToggler {
+    color: var(--text-color-dark);
+    border-color: var(--text-color-dark);
 }
 
-/* Sun icon for light mode */
-body.light-mode #darkModeToggler::before {
-    width: 20px;
-    height: 20px;
-    background-color: var(--accent-color-light);
-    box-shadow: 0 0 10px var(--accent-color-light);
+body.light-mode #darkModeToggler:hover {
+    background-color: var(--text-color-light);
+    color: var(--bg-color-light);
 }
 
-/* Moon icon for dark mode */
-body.dark-mode #darkModeToggler::before {
-    width: 18px;
-    height: 18px;
-    background-color: transparent;
-    box-shadow: -5px 2px 0 0px var(--accent-color-dark);
-    transform: translate(-50%, -50%) rotate(-15deg);
+body.dark-mode #darkModeToggler:hover {
+    background-color: var(--text-color-dark);
+    color: var(--bg-color-dark);
 }
 
 section {
@@ -768,37 +751,58 @@ body.dark-mode #quote-author {
     color: var(--text-color-dark);
 }
 
-/* New API Sections */
-#financial-news ul, #crypto-news ul, #ai-news ul {
-    list-style-type: none;
-    padding: 0;
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.news-category h3 {
     text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 
-#financial-news li, #crypto-news li, #ai-news li {
-    margin-bottom: 1rem;
+.news-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-#financial-news a, #crypto-news a, #ai-news a {
+.news-article {
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.light-mode #financial-news a, body.light-mode #crypto-news a, body.light-mode #ai-news a {
+.news-article:hover {
+    transform: translateY(-8px);
+}
+
+body.light-mode .news-article {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 5px 15px var(--shadow-color-light);
     color: var(--text-color-light);
 }
 
-body.dark-mode #financial-news a, body.dark-mode #crypto-news a, body.dark-mode #ai-news a {
+body.dark-mode .news-article {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 5px 15px var(--shadow-color-dark);
     color: var(--text-color-dark);
 }
 
-body.light-mode #financial-news a:hover, body.light-mode #crypto-news a:hover, body.light-mode #ai-news a:hover {
-    color: var(--accent-color-light);
+.news-article img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
-body.dark-mode #financial-news a:hover, body.dark-mode #crypto-news a:hover, body.dark-mode #ai-news a:hover {
-    color: var(--accent-color-dark);
+.news-article h3 {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0;
 }
 
 #crypto-container .crypto-grid {
@@ -812,6 +816,16 @@ body.dark-mode #financial-news a:hover, body.dark-mode #crypto-news a:hover, bod
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#crypto-container .crypto-item:hover {
+    transform: translateY(-8px);
+}
+
+#chart-container {
+    height: 400px;
 }
 
 body.light-mode #crypto-container .crypto-item {

@@ -6,7 +6,7 @@
     <title>John Angelo P. David | Portfolio</title>
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
-<body class="light-mode">
+<body class="dark-mode">
     <header>
         <nav>
             <button id="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false">
@@ -18,8 +18,9 @@
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#Schoolworks">Portfolio</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#news">News</a></li>
                 <li><a href="#contact-me">Contact Me!</a></li>
-                <li><button id="darkModeToggler"></button></li>
+                <li><button id="darkModeToggler">Toggle Dark Mode</button></li>
             </ul>
         </nav>
     </header>
@@ -135,19 +136,18 @@
                 </div>
             </div>
         </section>
-        <section id="financial-news">
-            <h2>Financial News</h2>
-            <div id="news-container"></div>
-        </section>
-
-        <section id="crypto-news">
-            <h2>Cryptocurrency News</h2>
-            <div id="crypto-news-container"></div>
-        </section>
-
-        <section id="ai-news">
-            <h2>AI News</h2>
-            <div id="ai-news-container"></div>
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-grid">
+                <div class="news-category">
+                    <h3>Cryptocurrency News</h3>
+                    <div id="crypto-news-container"></div>
+                </div>
+                <div class="news-category">
+                    <h3>AI News</h3>
+                    <div id="ai-news-container"></div>
+                </div>
+            </div>
         </section>
 
         <section id="crypto-prices">
@@ -170,12 +170,20 @@
         <p style="text-align: center;">Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
     </footer>
 
-    <!-- The Modal -->
+    <!-- Project Modal -->
     <div id="projectModal" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
         <div id="modal-body"></div>
       </div>
+    </div>
+
+    <!-- Chart Modal -->
+    <div id="chartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="chart-container"></div>
+        </div>
     </div>
 
     <script src="static/js/script.js"></script>
