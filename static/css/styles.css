@@ -138,31 +138,45 @@ nav ul li a:hover::after {
 
 #darkModeToggler {
     background: none;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 8px 12px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-body.light-mode #darkModeToggler {
-    color: var(--text-color-light);
-    border-color: var(--text-color-light);
+#darkModeToggler:hover {
+    transform: scale(1.1);
 }
 
-body.dark-mode #darkModeToggler {
-    color: var(--text-color-dark);
-    border-color: var(--text-color-dark);
+#darkModeToggler::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.5s ease;
 }
 
-body.light-mode #darkModeToggler:hover {
-    background-color: var(--text-color-light);
-    color: var(--bg-color-light);
+/* Sun icon for light mode */
+body.light-mode #darkModeToggler::before {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color-light);
+    box-shadow: 0 0 10px var(--accent-color-light);
 }
 
-body.dark-mode #darkModeToggler:hover {
-    background-color: var(--text-color-dark);
-    color: var(--bg-color-dark);
+/* Moon icon for dark mode */
+body.dark-mode #darkModeToggler::before {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    box-shadow: -5px 2px 0 0px var(--accent-color-dark);
+    transform: translate(-50%, -50%) rotate(-15deg);
 }
 
 section {
@@ -726,44 +740,108 @@ body.dark-mode .skill-category li::before {
 
 /* Quote of the Day in Hero */
 #quote-container {
-    margin-top: 3rem;
-    max-width: 600px;
+    margin-bottom: 2rem;
+    max-width: 700px;
     text-align: center;
 }
 
 #quote-text {
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: #ccd6f6; /* A slightly lighter text color to stand out but not too much */
+    color: var(--accent-color-light);
+}
+
+body.dark-mode #quote-text {
+    color: var(--accent-color-dark);
 }
 
 #quote-author {
     font-size: 1rem;
     font-weight: 600;
-    color: #8892b0; /* A muted color for the author */
+    color: var(--text-color-light);
 }
 
-/* API Sections */
-#useless-fact, #random-dog {
+body.dark-mode #quote-author {
+    color: var(--text-color-dark);
+}
+
+/* New API Sections */
+#financial-news ul {
+    list-style-type: none;
+    padding: 0;
     text-align: center;
 }
 
-#useless-fact p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
+#financial-news li {
+    margin-bottom: 1rem;
 }
 
-#random-dog img {
-    max-width: 100%;
-    max-height: 500px;
-    border-radius: 10px;
+#financial-news a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+body.light-mode #financial-news a {
+    color: var(--text-color-light);
+}
+
+body.dark-mode #financial-news a {
+    color: var(--text-color-dark);
+}
+
+body.light-mode #financial-news a:hover {
+    color: var(--accent-color-light);
+}
+
+body.dark-mode #financial-news a:hover {
+    color: var(--accent-color-dark);
+}
+
+#crypto-container .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
-    box-shadow: 0 10px 30px var(--shadow-color-light);
+}
+
+#crypto-container .crypto-item {
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+body.light-mode #crypto-container .crypto-item {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 5px 15px var(--shadow-color-light);
+}
+
+body.dark-mode #crypto-container .crypto-item {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 5px 15px var(--shadow-color-dark);
+}
+
+#crypto-container .crypto-name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#crypto-container .crypto-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+body.light-mode #crypto-container .crypto-price {
+    color: var(--accent-color-light);
+}
+
+body.dark-mode #crypto-container .crypto-price {
+    color: var(--accent-color-dark);
 }
 
 

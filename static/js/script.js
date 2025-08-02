@@ -2,16 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
 
-    const updateButtonText = () => {
-        const isDarkMode = body.classList.contains('dark-mode');
-        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
-    };
     // Function to set theme based on preference
     const setTheme = (theme) => {
         body.classList.remove('dark-mode', 'light-mode');
         body.classList.add(theme);
         localStorage.setItem('theme', theme);
-        updateButtonText();
     };
 
     // Toggle theme
@@ -31,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         setTheme('light-mode');
     }
-    updateButtonText();
 
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('section');
@@ -149,38 +143,58 @@ document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Useless Fact Logic
-    const fetchFact = () => {
-        const factText = document.getElementById('fact-text');
-        if (factText) {
-            fetch('https://uselessfacts.jsph.pl/random.json?language=en')
+    // Financial News Logic
+    const fetchNews = () => {
+        const newsContainer = document.getElementById('news-container');
+        if (newsContainer) {
+            const rssUrl = 'https://www.reuters.com/pf/api/v2/content/articles/channel?channel=business-finance';
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
                 .then(response => response.json())
                 .then(data => {
-                    factText.textContent = data.text;
+                    if (data.items) {
+                        let articles = data.items.slice(0, 5); // Get first 5 articles
+                        let html = '<ul>';
+                        articles.forEach(article => {
+                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                        });
+                        html += '</ul>';
+                        newsContainer.innerHTML = html;
+                    }
                 })
                 .catch(error => {
-                    console.error('Error fetching the useless fact:', error);
-                    factText.textContent = 'A crocodile cannot stick its tongue out.';
+                    console.error('Error fetching financial news:', error);
+                    newsContainer.innerHTML = '<p>Could not load financial news at this time.</p>';
                 });
         }
     };
 
-    fetchFact();
+    fetchNews();
 
-    // Random Dog Logic
-    const fetchDog = () => {
-        const dogImage = document.getElementById('dog-image');
-        if (dogImage) {
-            fetch('https://dog.ceo/api/breeds/image/random')
+    // Crypto Prices Logic
+    const fetchCrypto = () => {
+        const cryptoContainer = document.getElementById('crypto-container');
+        if (cryptoContainer) {
+            const cryptoIds = 'bitcoin,ethereum,ripple,cardano,solana';
+            fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cryptoIds}&vs_currencies=usd`)
                 .then(response => response.json())
                 .then(data => {
-                    dogImage.src = data.message;
+                    let html = '<div class="crypto-grid">';
+                    for (const id in data) {
+                        const price = data[id].usd;
+                        html += `<div class="crypto-item">
+                                    <span class="crypto-name">${id.charAt(0).toUpperCase() + id.slice(1)}</span>
+                                    <span class="crypto-price">$${price.toLocaleString()}</span>
+                                 </div>`;
+                    }
+                    html += '</div>';
+                    cryptoContainer.innerHTML = html;
                 })
                 .catch(error => {
-                    console.error('Error fetching the dog image:', error);
+                    console.error('Error fetching crypto prices:', error);
+                    cryptoContainer.innerHTML = '<p>Could not load cryptocurrency prices at this time.</p>';
                 });
         }
     };
 
-    fetchDog();
+    fetchCrypto();
 });
