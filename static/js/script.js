@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
-    body.classList.add('light-mode'); // Set the blue theme as the only theme
+
+    const updateButtonText = () => {
+        const isDarkMode = body.classList.contains('dark-mode');
+        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
+    };
+    // Function to set theme based on preference
+    const setTheme = (theme) => {
+        body.classList.remove('dark-mode', 'light-mode');
+        body.classList.add(theme);
+        localStorage.setItem('theme', theme);
+        updateButtonText();
+    };
+
+    // Toggle theme
+    darkModeToggler.addEventListener('click', () => {
+        const currentTheme = body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
+        setTheme(currentTheme);
+    });
+
+    // Check for saved theme in local storage or user's preference
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme('light-mode'); // Default to blue theme
+    }
+    updateButtonText();
 
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('section');
@@ -153,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchAiNews = () => {
         const newsContainer = document.getElementById('ai-news-container');
         if (newsContainer) {
-            const rssUrl = 'https://techcrunch.com/category/artificial-intelligence/feed/';
+            const rssUrl = 'http://feeds.feedburner.com/venturebeat/SZYF';
             fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
                 .then(response => response.json())
                 .then(data => {
