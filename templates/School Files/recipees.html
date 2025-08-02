@@ -5,57 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Recipes</title>
     <link rel="stylesheet" href="../../static/css/styles.css">
+    <style>
+        .recipe-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .recipe-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
-<body class="dark-mode">
+<body class="light-mode">
     <main>
         <h1>Healthy Recipes</h1>
-        <section>
-            <h2>Healthy Breakfast</h2>
-            <img src="../../static/images/friend egg and avocado toast.jpg" alt="Healthy Breakfast" class="project-image">
-            <ul>
-                <li>Avocado toast with a fried egg and a sprinkle of chili flakes</li>
-                <li>Overnight oats with chia seeds, almond milk, and fresh berries</li>
-                <li>Green smoothie with spinach, kale, banana, and almond butter</li>
-                <li>Greek yogurt with honey, granola, and sliced almonds</li>
-                <li>Whole-grain pancakes topped with fresh blueberries and a drizzle of maple syrup</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Lunch Options</h2>
-            <img src="../../static/images/spicy roasted chickpea salad bowl.jpg" alt="Lunch Options" class="project-image">
-            <ul>
-                <li>Grilled chicken salad with mixed greens, cherry tomatoes, and a balsamic vinaigrette</li>
-                <li>Quinoa bowl with roasted vegetables, chickpeas, and tahini dressing</li>
-                <li>Tuna salad sandwich on whole-grain bread with avocado slices</li>
-                <li>Lentil soup with carrots, celery, and a slice of whole-grain bread</li>
-                <li>Turkey and avocado wrap with spinach and hummus</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Dinner Ideas</h2>
-            <img src="../../static/images/ovenbaked salmon.jpg" alt="Dinner Ideas" class="project-image">
-            <ul>
-                <li>Baked salmon with roasted asparagus and quinoa</li>
-                <li>Stir-fried tofu with mixed vegetables and brown rice</li>
-                <li>Grilled shrimp skewers with a side of couscous and steamed broccoli</li>
-                <li>Vegetarian chili with black beans, kidney beans, and diced tomatoes</li>
-                <li>Whole-wheat pasta with tomato basil sauce and a side of steamed spinach</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Healthy Snacks</h2>
-            <img src="../../static/images/apple slices.jpg" alt="Healthy Snacks" class="project-image">
-            <ul>
-                <li>Apple slices with almond butter</li>
-                <li>Hummus with carrot sticks and cucumber slices</li>
-                <li>Trail mix with mixed nuts, seeds, and dried fruit</li>
-                <li>Rice cakes topped with avocado and a sprinkle of sea salt</li>
-                <li>Greek yogurt with a handful of fresh raspberries</li>
-            </ul>
-        </section>
+        <div class="recipe-card">
+            <h2>Avocado Toast with Egg</h2>
+            <img src="../../static/images/friend egg and avocado toast.jpg" alt="Avocado Toast" class="project-image">
+            <p>A simple yet satisfying breakfast. Toast a slice of whole-grain bread, mash half an avocado on top, and finish with a fried egg and a sprinkle of chili flakes.</p>
+        </div>
+        <div class="recipe-card">
+            <h2>Spicy Roasted Chickpea Salad</h2>
+            <img src="../../static/images/spicy roasted chickpea salad bowl.jpg" alt="Chickpea Salad" class="project-image">
+            <p>A flavorful and filling lunch. Toss chickpeas with olive oil and spices, roast until crispy, and serve over a bed of mixed greens with your favorite vegetables.</p>
+        </div>
+        <div class="recipe-card">
+            <h2>Oven-Baked Salmon</h2>
+            <img src="../../static/images/ovenbaked salmon.jpg" alt="Baked Salmon" class="project-image">
+            <p>A healthy and delicious dinner. Season a salmon fillet with lemon, dill, and garlic, then bake at 400°F (200°C) for 12-15 minutes. Serve with roasted asparagus and quinoa.</p>
+        </div>
+        <div class="recipe-card">
+            <h2>Apple Slices with Almond Butter</h2>
+            <img src="../../static/images/apple slices.jpg" alt="Apple Slices" class="project-image">
+            <p>A quick and easy snack. Simply slice an apple and serve with a side of almond butter for a dose of healthy fats and fiber.</p>
+        </div>
     </main>
 </body>
 </html>
