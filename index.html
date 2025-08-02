@@ -9,6 +9,11 @@
 <body class="dark-mode">
     <header>
         <nav>
+            <button id="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul>
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#Schoolworks">Portfolio</a></li>
@@ -19,34 +24,42 @@
         </nav>
     </header>
     <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="fade-in">John Angelo P. David</h1>
+                <p class="subtitle fade-in-delay1">Web Developer, Designer & Tech Enthusiast</p>
+                <p class="fade-in-delay2">I build beautiful and user-friendly websites. Based in the Philippines.</p>
+                <a href="#about-me" class="cta-button fade-in-delay3">Learn More About Me</a>
+            </div>
+        </section>
+
         <section id="about-me">
-            <h2>About Me</h2>
+            <h2>Who I Am</h2>
             <img src="static/images/pfp.jfif" alt="Profile Picture" class="profile-image" >
             <hr>
-            <p>I'm John Angelo P. David, a detail-oriented individual with a strong passion for web development and design. I'm currently pursuing a degree in Information Technology at the University of Immaculate Conception.</p>
-            <p>As a dedicated individual, I'm always seeking opportunities to improve my skills and create innovative solutions. I'm excited to share my work with you and explore the possibilities of collaboration.</p>
-
+            <p>I am a detail-oriented individual with a strong passion for web development, design and data. Currently pursuing a degree in Information Technology, I am dedicated to creating innovative solutions and exceeding expectations. My journey in tech began with a fascination for its potential to improve lives, and I've since developed a strong foundation in software development, data analysis, and hardware.</p>
+            <p>I believe that technology should be both functional and a joy to use. This philosophy guides my approach to every project I undertake. I invite you to explore my work and see this commitment to excellence in action.</p>
         </section>
         <section id="Schoolworks">
             <h2>My Schoolworks</h2>
             <p>Below is a showcase of my projects that I've worked on at school:</p>
             <ul>
                 <li>
-                    <a href="templates/School Files/recipees.html" target="_blank">
+                    <a href="templates/School Files/recipees.html" class="project-link">
                         <img src="static/images/Recipee.jpg" alt="Recipees" width="250" height="250">
                         <h3>Healthy Recipes</h3>
                         <p>A website offering delicious and nutritious recipes for health enthusiasts.</p>
                     </a>
                 </li>
                 <li>
-                    <a href="templates/School Files/fashionn.html" target="_blank">
+                    <a href="templates/School Files/fashionn.html" class="project-link">
                         <img src="static/images/fashion.jpg" alt="Recipees" width="250" height="250">
                         <h3>Fashion Blog</h3>
                         <p>A blog providing insider tips and trends from the fashion world.</p>
                     </a>
                 </li>
                 <li>
-                    <a href="templates/School Files/indexact2.html" target="_blank">
+                    <a href="templates/School Files/indexact2.html" class="project-link">
                         <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/travel.jpeg" alt="Olivia Woodruff's Portfolio Screenshot" width="250" height="250">
                         <h3>Olivia Woodruff's Portfolio</h3>
                         <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
@@ -71,17 +84,52 @@
         </section>
         <section id="skills">
             <h2>Technical Skills</h2>
-            <hr>
-            <p>My technical expertise spans various domains:</p>
-            <ul style="list-style-type: disc;">
-                <li>Proficient in web development using HTML, CSS, Python, WordPress, and Wix</li>
-                <li>Skilled in data cleaning, management, and visualization using Excel, Google Sheets, Power BI, and SQL</li>
-                <li>Familiar with OpenAI functions and foundational machine learning concepts</li>
-                <li>Extensive knowledge in PC building, diagnostics, hardware repair, and cable management</li>
-                <li>Working understanding of PBX/PABX systems, networking, and peripheral customization</li>
-                <li>Experience in photography, including camera crane operation, and basic Adobe Premiere Pro editing</li>
-                <li>Proficient in digital art creation using IbisPaint, blending creativity with technical expertise</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>WordPress</li>
+                        <li>Wix</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Analytics</h3>
+                    <ul>
+                        <li>Excel & Google Sheets</li>
+                        <li>Power BI</li>
+                        <li>SQL</li>
+                        <li>Data Cleaning & Management</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>OpenAI API</li>
+                        <li>Foundational ML Concepts</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IT & Hardware</h3>
+                    <ul>
+                        <li>PC Building & Diagnostics</li>
+                        <li>Hardware Repair</li>
+                        <li>Networking & Cable Management</li>
+                        <li>PBX/PABX Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Creative & Media</h3>
+                    <ul>
+                        <li>Photography</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Digital Art (IbisPaint)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section id="contact-me">
             <h2>Contact me</h2>
@@ -96,6 +144,15 @@
     <footer>
         <p style="text-align: center;">Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
     </footer>
+
+    <!-- The Modal -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
     <script src="static/js/script.js"></script>
 </body>
 </html>

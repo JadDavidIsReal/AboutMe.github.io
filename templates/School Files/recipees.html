@@ -7,18 +7,11 @@
     <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body class="dark-mode">
-    <header style="height: 50px; display: flex; justify-content: center; align-items: center;">
-        <h1 style="margin-top: 0px; flex: 1; text-align: center;">Healthy Recipes</h1>
-        <div style="margin-top: 0px;">
-            <button class="toggleDarkMode" style="float: right;" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-        </div>
-    </header>
-    <section>
-        <main style="margin-top: 0px;"></main>
-        <h2>Healthy Breakfast</h2>
-            <div class="meal-images">
-                <img src="../../static/images/friend egg and avocado toast.jpg" alt="Healthy Breakfast" style="width: 50px; height: 50px;">
-            </div>
+    <main>
+        <h1>Healthy Recipes</h1>
+        <section>
+            <h2>Healthy Breakfast</h2>
+            <img src="../../static/images/friend egg and avocado toast.jpg" alt="Healthy Breakfast" class="project-image">
             <ul>
                 <li>Avocado toast with a fried egg and a sprinkle of chili flakes</li>
                 <li>Overnight oats with chia seeds, almond milk, and fresh berries</li>
@@ -30,9 +23,7 @@
 
         <section>
             <h2>Lunch Options</h2>
-            <div class="meal-images">
-                <img src="../../static/images/spicy roasted chickpea salad bowl.jpg" alt="Lunch Options" style="width: 50px; height: 50px;">
-            </div>
+            <img src="../../static/images/spicy roasted chickpea salad bowl.jpg" alt="Lunch Options" class="project-image">
             <ul>
                 <li>Grilled chicken salad with mixed greens, cherry tomatoes, and a balsamic vinaigrette</li>
                 <li>Quinoa bowl with roasted vegetables, chickpeas, and tahini dressing</li>
@@ -44,9 +35,7 @@
 
         <section>
             <h2>Dinner Ideas</h2>
-            <div class="meal-images">
-                <img src="../../static/images/ovenbaked salmon.jpg" alt="Dinner Ideas" style="width: 50px; height: 50px;">
-            </div>
+            <img src="../../static/images/ovenbaked salmon.jpg" alt="Dinner Ideas" class="project-image">
             <ul>
                 <li>Baked salmon with roasted asparagus and quinoa</li>
                 <li>Stir-fried tofu with mixed vegetables and brown rice</li>
@@ -58,9 +47,7 @@
 
         <section>
             <h2>Healthy Snacks</h2>
-            <div class="meal-images">
-                <img src="../../static/images/apple slices.jpg" alt="Healthy Snacks" style="width: 50px; height: 50px;">
-            </div>
+            <img src="../../static/images/apple slices.jpg" alt="Healthy Snacks" class="project-image">
             <ul>
                 <li>Apple slices with almond butter</li>
                 <li>Hummus with carrot sticks and cucumber slices</li>
@@ -70,16 +57,5 @@
             </ul>
         </section>
     </main>
-
-    <footer>
-        <hr>
-        <p style="text-align: center;">End.</p>
-    </footer>
-
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("light-mode");
-        }
-    </script>
 </body>
 </html>
