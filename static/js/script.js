@@ -1,34 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
-
-    const updateButtonText = () => {
-        const isDarkMode = body.classList.contains('dark-mode');
-        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
-    };
-    // Function to set theme based on preference
-    const setTheme = (theme) => {
-        body.classList.remove('dark-mode', 'light-mode');
-        body.classList.add(theme);
-        localStorage.setItem('theme', theme);
-        updateButtonText();
-    };
-
-    // Toggle theme
-    darkModeToggler.addEventListener('click', () => {
-        const currentTheme = body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
-        setTheme(currentTheme);
-    });
-
-    // Check for saved theme in local storage or user's preference
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        setTheme('dark-mode'); // Default to dark theme
-    }
-    updateButtonText();
+    body.classList.add('light-mode'); // Set the blue theme as the only theme
 
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('section');
@@ -137,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateClock = () => {
         if (clockElement) {
             const now = new Date();
-            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             const dateString = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             clockElement.innerHTML = `${dateString} | ${timeString}`;
         }
@@ -158,8 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         let articles = data.items.slice(0, 4); // Get first 4 articles
                         let html = '<div class="news-articles-grid">';
                         articles.forEach(article => {
+                            const imageUrl = article.enclosure && article.enclosure.link ? article.enclosure.link : 'static/images/news-placeholder.jpg';
                             html += `<a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-article">
-                                        <img src="${article.thumbnail}" alt="">
+                                        <img src="${imageUrl}" alt="">
                                         <h3>${article.title}</h3>
                                      </a>`;
                         });
@@ -188,8 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         let articles = data.items.slice(0, 4); // Get first 4 articles
                         let html = '<div class="news-articles-grid">';
                         articles.forEach(article => {
+                            const imageUrl = article.enclosure && article.enclosure.link ? article.enclosure.link : 'static/images/news-placeholder.jpg';
                             html += `<a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-article">
-                                        <img src="${article.thumbnail}" alt="">
+                                        <img src="${imageUrl}" alt="">
                                         <h3>${article.title}</h3>
                                      </a>`;
                         });
@@ -210,14 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchCrypto = () => {
         const cryptoContainer = document.getElementById('crypto-container');
         if (cryptoContainer) {
-            const cryptoIds = 'bitcoin,ethereum,ripple,cardano,solana,dogecoin,shiba-inu';
+            const cryptoIds = 'bitcoin,ethereum,ripple,cardano,solana,dogecoin,tether,phantasma';
             fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cryptoIds}&vs_currencies=usd`)
                 .then(response => response.json())
                 .then(data => {
                     let html = '<div class="crypto-grid">';
                     for (const id in data) {
                         const price = data[id].usd;
-                        const symbol = id.toUpperCase().replace('-', '');
+                        let symbol = id.toUpperCase().replace('-', '');
+                        if (id === 'phantasma') symbol = 'SOUL';
+                        if (id === 'tether') symbol = 'USDT';
                         html += `<div class="crypto-item" data-symbol="${symbol}">
                                     <span class="crypto-name">${id.charAt(0).toUpperCase() + id.slice(1)}</span>
                                     <span class="crypto-price">$${price.toLocaleString()}</span>
@@ -243,6 +219,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchCrypto();
+
+    // Refresh Buttons Logic
+    const refreshNewsButton = document.getElementById('refresh-news');
+    const refreshCryptoButton = document.getElementById('refresh-crypto');
+
+    if (refreshNewsButton) {
+        refreshNewsButton.addEventListener('click', () => {
+            fetchCryptoNews();
+            fetchAiNews();
+        });
+    }
+
+    if (refreshCryptoButton) {
+        refreshCryptoButton.addEventListener('click', fetchCrypto);
+    }
 
     // Chart Modal Logic
     const chartModal = document.getElementById('chartModal');

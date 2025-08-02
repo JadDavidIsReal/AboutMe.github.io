@@ -20,7 +20,6 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#contact-me">Contact Me!</a></li>
-                <li><button id="darkModeToggler">Toggle Dark Mode</button></li>
             </ul>
         </nav>
     </header>
@@ -137,7 +136,10 @@
             </div>
         </section>
         <section id="news">
-            <h2>News</h2>
+            <div class="section-header">
+                <h2>News</h2>
+                <button id="refresh-news" class="refresh-button">&#x21bb;</button>
+            </div>
             <div class="news-grid">
                 <div class="news-category">
                     <h3>Cryptocurrency News</h3>
@@ -151,7 +153,11 @@
         </section>
 
         <section id="crypto-prices">
-            <h2>Cryptocurrency Prices</h2>
+            <div class="section-header">
+                <h2>Top Cryptocurrency Prices</h2>
+                <button id="refresh-crypto" class="refresh-button">&#x21bb;</button>
+            </div>
+            <p class="subtitle" style="text-align: center; margin-top: -2rem;">Click to view live chart</p>
             <div id="crypto-container"></div>
         </section>
 
@@ -167,7 +173,10 @@
     </main>
     <footer>
         <div id="clock"></div>
-        <p style="text-align: center;">Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
+        <p>Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
+        <div class="footer-copyright">
+            2025 Chartreuse©. All Rights Reserved.
+        </div>
     </footer>
 
     <!-- Project Modal -->
