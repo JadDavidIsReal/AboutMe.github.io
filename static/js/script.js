@@ -2,11 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
 
+    const updateButtonText = () => {
+        const isDarkMode = body.classList.contains('dark-mode');
+        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
+    };
     // Function to set theme based on preference
     const setTheme = (theme) => {
         body.classList.remove('dark-mode', 'light-mode');
         body.classList.add(theme);
         localStorage.setItem('theme', theme);
+        updateButtonText();
     };
 
     // Toggle theme
@@ -26,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         setTheme('light-mode');
     }
+    updateButtonText();
 
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('section');
@@ -106,4 +112,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Quote of the Day Logic
+    const fetchQuote = () => {
+        const quoteText = document.getElementById('quote-text');
+        const quoteAuthor = document.getElementById('quote-author');
+
+        if (quoteText && quoteAuthor) {
+            fetch('https://api.quotable.io/random')
+                .then(response => response.json())
+                .then(data => {
+                    quoteText.textContent = `“${data.content}”`;
+                    quoteAuthor.textContent = `— ${data.author}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching the quote:', error);
+                    quoteText.textContent = '“The only way to do great work is to love what you do.”';
+                    quoteAuthor.textContent = '— Steve Jobs';
+                });
+        }
+    };
+
+    fetchQuote();
 });
