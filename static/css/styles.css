@@ -137,8 +137,8 @@ nav ul li a:hover::after {
 }
 
 #darkModeToggler {
-    background: none;
-    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -769,35 +769,35 @@ body.dark-mode #quote-author {
 }
 
 /* New API Sections */
-#financial-news ul {
+#financial-news ul, #crypto-news ul, #ai-news ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
 }
 
-#financial-news li {
+#financial-news li, #crypto-news li, #ai-news li {
     margin-bottom: 1rem;
 }
 
-#financial-news a {
+#financial-news a, #crypto-news a, #ai-news a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-body.light-mode #financial-news a {
+body.light-mode #financial-news a, body.light-mode #crypto-news a, body.light-mode #ai-news a {
     color: var(--text-color-light);
 }
 
-body.dark-mode #financial-news a {
+body.dark-mode #financial-news a, body.dark-mode #crypto-news a, body.dark-mode #ai-news a {
     color: var(--text-color-dark);
 }
 
-body.light-mode #financial-news a:hover {
+body.light-mode #financial-news a:hover, body.light-mode #crypto-news a:hover, body.light-mode #ai-news a:hover {
     color: var(--accent-color-light);
 }
 
-body.dark-mode #financial-news a:hover {
+body.dark-mode #financial-news a:hover, body.dark-mode #crypto-news a:hover, body.dark-mode #ai-news a:hover {
     color: var(--accent-color-dark);
 }
 
