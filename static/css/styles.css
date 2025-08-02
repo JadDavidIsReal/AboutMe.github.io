@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Blue theme (new "light mode") */
-    --bg-color-light: #0a192f;
-    --text-color-light: #ccd6f6;
-    --heading-color-light: #e6f1ff;
-    --header-bg-light: rgba(10, 25, 47, 0.85);
-    --card-bg-light: #112240;
-    --accent-color-light: #64ffda;
-    --accent-color-hover-light: #1de9b6;
-    --shadow-color-light: rgba(0, 0, 0, 0.2);
+    /* Light Mode */
+    --bg-color-light: #f4f7f5;
+    --text-color-light: #333;
+    --heading-color-light: #111;
+    --header-bg-light: rgba(255, 255, 255, 0.85);
+    --card-bg-light: #fff;
+    --accent-color-light: #007bff;
+    --accent-color-hover-light: #0056b3;
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
 
-    /* Black theme (new "dark mode") */
-    --bg-color-dark: #000000;
-    --text-color-dark: #f1f1f1;
-    --heading-color-dark: #ffffff;
-    --header-bg-dark: rgba(15, 15, 15, 0.85);
-    --card-bg-dark: #1a1a1a;
-    --accent-color-dark: #00aaff;
-    --accent-color-hover-dark: #0088cc;
-    --shadow-color-dark: rgba(255, 255, 255, 0.1);
+    /* Dark Mode */
+    --bg-color-dark: #0a192f;
+    --text-color-dark: #8892b0;
+    --heading-color-dark: #ccd6f6;
+    --header-bg-dark: rgba(10, 25, 47, 0.85);
+    --card-bg-dark: #112240;
+    --accent-color-dark: #64ffda;
+    --accent-color-hover-dark: #1de9b6;
+    --shadow-color-dark: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -28,7 +28,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -43,27 +43,57 @@ body.dark-mode {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 0 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-body.light-mode header {
+header {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+    backdrop-filter: blur(10px);
+}
+
+body.light-mode header.scrolled {
     background-color: var(--header-bg-light);
     box-shadow: 0 2px 5px var(--shadow-color-light);
 }
 
-body.dark-mode header {
+body.dark-mode header.scrolled {
     background-color: var(--header-bg-dark);
     box-shadow: 0 2px 5px var(--shadow-color-dark);
 }
 
 nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+body.light-mode .logo {
+    color: var(--heading-color-light);
+}
+
+body.dark-mode .logo {
+    color: var(--heading-color-dark);
 }
 
 nav ul {
@@ -1022,4 +1052,81 @@ body.dark-mode #hamburger-menu span {
 
 .contact-section .contact a {
     color: var(--accent-color);
+}
+
+#github-projects {
+    margin-bottom: 3rem;
+}
+
+#github-projects h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+#github-projects ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+#github-projects li {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.light-mode #github-projects li {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 5px 15px var(--shadow-color-light);
+}
+
+body.dark-mode #github-projects li {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 5px 15px var(--shadow-color-dark);
+}
+
+#github-projects li:hover {
+    transform: translateY(-8px);
+}
+
+body.light-mode #github-projects li:hover {
+    box-shadow: 0 12px 25px var(--shadow-color-light);
+}
+
+body.dark-mode #github-projects li:hover {
+    box-shadow: 0 12px 25px var(--shadow-color-dark);
+}
+
+#github-projects a {
+    text-decoration: none;
+    display: block;
+    padding: 1.5rem;
+}
+
+body.light-mode #github-projects a {
+    color: var(--text-color-light);
+}
+
+body.dark-mode #github-projects a {
+    color: var(--text-color-dark);
+}
+
+#github-projects h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+body.light-mode #github-projects h4 {
+    color: var(--heading-color-light);
+}
+
+body.dark-mode #github-projects h4 {
+    color: var(--heading-color-dark);
+}
+
+#github-projects p {
+    margin: 0;
+    font-size: 0.9rem;
 }
