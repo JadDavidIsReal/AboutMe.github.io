@@ -134,4 +134,53 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchQuote();
+
+    // Clock Logic
+    const clockElement = document.getElementById('clock');
+    const updateClock = () => {
+        if (clockElement) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const dateString = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            clockElement.innerHTML = `${dateString} | ${timeString}`;
+        }
+    };
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Useless Fact Logic
+    const fetchFact = () => {
+        const factText = document.getElementById('fact-text');
+        if (factText) {
+            fetch('https://uselessfacts.jsph.pl/random.json?language=en')
+                .then(response => response.json())
+                .then(data => {
+                    factText.textContent = data.text;
+                })
+                .catch(error => {
+                    console.error('Error fetching the useless fact:', error);
+                    factText.textContent = 'A crocodile cannot stick its tongue out.';
+                });
+        }
+    };
+
+    fetchFact();
+
+    // Random Dog Logic
+    const fetchDog = () => {
+        const dogImage = document.getElementById('dog-image');
+        if (dogImage) {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    dogImage.src = data.message;
+                })
+                .catch(error => {
+                    console.error('Error fetching the dog image:', error);
+                });
+        }
+    };
+
+    fetchDog();
 });

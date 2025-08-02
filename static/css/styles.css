@@ -58,7 +58,6 @@ header {
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     transition: background-color 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
@@ -75,12 +74,19 @@ body.dark-mode header {
     box-shadow: 0 2px 5px var(--shadow-color-dark);
 }
 
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
 nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     align-items: center;
+    width: 100%;
 }
 
 nav ul li {
@@ -470,6 +476,20 @@ body.dark-mode #contact-me a:hover {
     transform: scale(1.1);
 }
 
+#clock {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+body.light-mode #clock {
+    color: var(--text-color-light);
+}
+
+body.dark-mode #clock {
+    color: var(--text-color-dark);
+}
+
 footer {
     text-align: center;
     padding: 2rem;
@@ -704,46 +724,46 @@ body.dark-mode .skill-category li::before {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Quote of the Day Section */
-#quote-of-the-day {
+/* Quote of the Day in Hero */
+#quote-container {
+    margin-top: 3rem;
+    max-width: 600px;
     text-align: center;
 }
 
-#quote-of-the-day figure {
-    margin: 0;
-    padding: 0;
-}
-
-#quote-of-the-day blockquote {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-    position: relative;
-    padding: 0 2rem;
-}
-
-body.light-mode #quote-of-the-day blockquote {
-    color: var(--text-color-light);
-}
-
-body.dark-mode #quote-of-the-day blockquote {
-    color: var(--text-color-dark);
-}
-
-#quote-of-the-day figcaption {
+#quote-text {
     font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ccd6f6; /* A slightly lighter text color to stand out but not too much */
+}
+
+#quote-author {
+    font-size: 1rem;
     font-weight: 600;
+    color: #8892b0; /* A muted color for the author */
 }
 
-body.light-mode #quote-of-the-day figcaption {
-    color: var(--accent-color-light);
+/* API Sections */
+#useless-fact, #random-dog {
+    text-align: center;
 }
 
-body.dark-mode #quote-of-the-day figcaption {
-    color: var(--accent-color-dark);
+#useless-fact p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#random-dog img {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-color-light);
 }
 
 
