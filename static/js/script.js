@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
+    const header = document.querySelector('header');
+
+    // Sticky Header
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
     const updateButtonText = () => {
         const isDarkMode = body.classList.contains('dark-mode');
-        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
+        darkModeToggler.setAttribute('aria-label', isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode');
     };
+
     // Function to set theme based on preference
     const setTheme = (theme) => {
         body.classList.remove('dark-mode', 'light-mode');
@@ -26,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
-        setTheme('light-mode'); // Default to blue theme
+        setTheme('dark-mode'); // Default to dark theme
     }
     updateButtonText();
 
@@ -59,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     projectLinks.forEach(link => {
         link.addEventListener('click', (e) => {
+            // Check if the link is an external link
+            if (link.hasAttribute('target')) {
+                return;
+            }
+
             e.preventDefault();
             const url = link.getAttribute('href');
 
@@ -109,28 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Quote of the Day Logic
-    const fetchQuote = () => {
-        const quoteText = document.getElementById('quote-text');
-        const quoteAuthor = document.getElementById('quote-author');
-
-        if (quoteText && quoteAuthor) {
-            fetch('https://api.quotable.io/random')
-                .then(response => response.json())
-                .then(data => {
-                    quoteText.textContent = `“${data.content}”`;
-                    quoteAuthor.textContent = `— ${data.author}`;
-                })
-                .catch(error => {
-                    console.error('Error fetching the quote:', error);
-                    quoteText.textContent = '“The only way to do great work is to love what you do.”';
-                    quoteAuthor.textContent = '— Steve Jobs';
-                });
-        }
-    };
-
-    fetchQuote();
 
     // Clock Logic
     const clockElement = document.getElementById('clock');
@@ -286,4 +280,36 @@ document.addEventListener('DOMContentLoaded', () => {
             chartModal.style.display = 'none';
         }
     });
+
+    // GitHub Projects
+    const fetchGitHubProjects = () => {
+        const githubContainer = document.getElementById('github-projects');
+        if(githubContainer) {
+            const username = 'JadDavidIsReal';
+            fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
+                .then(response => response.json())
+                .then(repos => {
+                    const pinnedRepos = repos.slice(0, 4); // First 4 repos
+                    let html = '<h3>My GitHub Projects</h3><ul>';
+                    pinnedRepos.forEach(repo => {
+                        html += `
+                            <li>
+                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                                    <h4>${repo.name}</h4>
+                                    <p>${repo.description || 'No description available.'}</p>
+                                </a>
+                            </li>
+                        `;
+                    });
+                    html += '</ul>';
+                    githubContainer.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error fetching GitHub projects:', error);
+                    githubContainer.innerHTML = '<p>Could not load GitHub projects at this time.</p>';
+                });
+        }
+    };
+
+    fetchGitHubProjects();
 });

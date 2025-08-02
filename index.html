@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Angelo P. David | Portfolio</title>
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
 </head>
 <body class="dark-mode">
     <header>
-        <nav>
+        <nav class="container">
+            <a href="#" class="logo">John Angelo P. David</a>
             <button id="hamburger-menu" aria-label="Open navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -16,7 +18,7 @@
             </button>
             <ul>
                 <li><a href="#about-me">About Me</a></li>
-                <li><a href="#Schoolworks">Portfolio</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#contact-me">Contact Me!</a></li>
@@ -26,157 +28,161 @@
     </header>
     <main>
         <section id="hero">
-            <div class="hero-content">
-                <figure id="quote-container" class="fade-in">
-                    <blockquote id="quote-text"></blockquote>
-                    <figcaption id="quote-author"></figcaption>
-                </figure>
-                <h1 class="fade-in-delay1">John Angelo P. David</h1>
-                <p class="subtitle fade-in-delay2">Web Developer, Designer & Tech Enthusiast</p>
-                <p class="fade-in-delay3">I build beautiful and user-friendly websites. Based in the Philippines.</p>
-                <a href="#about-me" class="cta-button fade-in-delay3">Learn More About Me</a>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="fade-in-delay1">John Angelo P. David</h1>
+                    <p class="subtitle fade-in-delay2">Web Developer, Designer & Tech Enthusiast</p>
+                    <p class="fade-in-delay3">I build beautiful and user-friendly websites. Based in the Philippines.</p>
+                    <a href="#about-me" class="cta-button fade-in-delay3">Learn More About Me</a>
+                </div>
             </div>
         </section>
 
         <section id="about-me">
-            <h2>Who I Am</h2>
-            <img src="static/images/pfp.jfif" alt="Profile Picture" class="profile-image" >
-            <hr>
-            <p>I am a detail-oriented individual with a strong passion for web development, design and data. Currently pursuing a degree in Information Technology, I am dedicated to creating innovative solutions and exceeding expectations. My journey in tech began with a fascination for its potential to improve lives, and I've since developed a strong foundation in software development, data analysis, and hardware.</p>
-            <p>I believe that technology should be both functional and a joy to use. This philosophy guides my approach to every project I undertake. I invite you to explore my work and see this commitment to excellence in action.</p>
+            <div class="container">
+                <h2>Who I Am</h2>
+                <img src="static/images/pfp.jfif" alt="Profile Picture" class="profile-image" >
+                <hr>
+                <p>I am a detail-oriented individual with a strong passion for web development, design and data. Currently pursuing a degree in Information Technology, I am dedicated to creating innovative solutions and exceeding expectations. My journey in tech began with a fascination for its potential to improve lives, and I've since developed a strong foundation in software development, data analysis, and hardware.</p>
+                <p>I believe that technology should be both functional and a joy to use. This philosophy guides my approach to every project I undertake. I invite you to explore my work and see this commitment to excellence in action.</p>
+            </div>
         </section>
-        <section id="Schoolworks">
-            <h2>My Schoolworks</h2>
-            <p>Below is a showcase of my projects that I've worked on at school:</p>
-            <ul>
-                <li>
-                    <a href="templates/School Files/recipees.html" class="project-link">
-                        <img src="static/images/Recipee.jpg" alt="Recipees" width="250" height="250">
-                        <h3>Healthy Recipes</h3>
-                        <p>A website offering delicious and nutritious recipes for health enthusiasts.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="templates/School Files/fashionn.html" class="project-link">
-                        <img src="static/images/fashion.jpg" alt="Recipees" width="250" height="250">
-                        <h3>Fashion Blog</h3>
-                        <p>A blog providing insider tips and trends from the fashion world.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="templates/School Files/indexact2.html" class="project-link">
-                        <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/travel.jpeg" alt="Olivia Woodruff's Portfolio Screenshot" width="250" height="250">
-                        <h3>Olivia Woodruff's Portfolio</h3>
-                        <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section id="notable-projects">
-            <h2>Notable Projects (Including the API Implementation) </h2>
-            <p>Here are some of the projects I've worked on worth showcasing:</p>
-            <ul>
-                <li>
-                    <a href="https://jaddavidisreal.github.io/chartbot/">Chartbot: An AI Chatbot (Requires a valid OpenAI API Key)</a>
-                </li>
-                <li>
-                    <a href="https://cert.efset.org/kbk3sf">My Official EFSET Certificate</a>
-                </li>
-                <li>
-                    <a href="https://tieryder88.wixsite.com/chartreuseofficial">My Old Wix Site</a>
-                </li>
-            </ul>
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div id="github-projects"></div>
+                <h3>Other Projects</h3>
+                <ul>
+                    <li>
+                        <a href="templates/School Files/recipees.html" class="project-link">
+                            <img src="static/images/Recipee.jpg" alt="Recipees" width="250" height="250">
+                            <h3>Healthy Recipes</h3>
+                            <p>A website offering delicious and nutritious recipes for health enthusiasts.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="templates/School Files/fashionn.html" class="project-link">
+                            <img src="static/images/fashion.jpg" alt="Fashion Blog" width="250" height="250">
+                            <h3>Fashion Blog</h3>
+                            <p>A blog providing insider tips and trends from the fashion world.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="templates/School Files/indexact2.html" class="project-link">
+                            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/travel.jpeg" alt="Olivia Woodruff's Portfolio Screenshot" width="250" height="250">
+                            <h3>Olivia Woodruff's Portfolio</h3>
+                            <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jaddavidisreal.github.io/chartbot/" class="project-link" target="_blank">
+                            <h3>Chartbot: An AI Chatbot</h3>
+                            <p>An AI Chatbot that requires a valid OpenAI API Key.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>HTML & CSS</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>WordPress</li>
-                        <li>Wix</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data & Analytics</h3>
-                    <ul>
-                        <li>Excel & Google Sheets</li>
-                        <li>Power BI</li>
-                        <li>SQL</li>
-                        <li>Data Cleaning & Management</li>
-                        <li>Data Visualization</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li>OpenAI API</li>
-                        <li>Foundational ML Concepts</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>IT & Hardware</h3>
-                    <ul>
-                        <li>PC Building & Diagnostics</li>
-                        <li>Hardware Repair</li>
-                        <li>Networking & Cable Management</li>
-                        <li>PBX/PABX Systems</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Creative & Media</h3>
-                    <ul>
-                        <li>Photography</li>
-                        <li>Adobe Premiere Pro</li>
-                        <li>Digital Art (IbisPaint)</li>
-                    </ul>
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Web Development</h3>
+                        <ul>
+                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>WordPress</li>
+                            <li>Wix</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data & Analytics</h3>
+                        <ul>
+                            <li>Excel & Google Sheets</li>
+                            <li>Power BI</li>
+                            <li>SQL</li>
+                            <li>Data Cleaning & Management</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & Machine Learning</h3>
+                        <ul>
+                            <li>OpenAI API</li>
+                            <li>Foundational ML Concepts</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>IT & Hardware</h3>
+                        <ul>
+                            <li>PC Building & Diagnostics</li>
+                            <li>Hardware Repair</li>
+                            <li>Networking & Cable Management</li>
+                            <li>PBX/PABX Systems</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Creative & Media</h3>
+                        <ul>
+                            <li>Photography</li>
+                            <li>Adobe Premiere Pro</li>
+                            <li>Digital Art (IbisPaint)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="news">
-            <div class="section-header">
-                <h2>News</h2>
-                <button id="refresh-news" class="refresh-button">&#x21bb;</button>
-            </div>
-            <div class="news-grid">
-                <div class="news-category">
-                    <h3>Cryptocurrency News</h3>
-                    <div id="crypto-news-container"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2>News</h2>
+                    <button id="refresh-news" class="refresh-button">&#x21bb;</button>
                 </div>
-                <div class="news-category">
-                    <h3>AI News</h3>
-                    <div id="ai-news-container"></div>
+                <div class="news-grid">
+                    <div class="news-category">
+                        <h3>Cryptocurrency News</h3>
+                        <div id="crypto-news-container"></div>
+                    </div>
+                    <div class="news-category">
+                        <h3>AI News</h3>
+                        <div id="ai-news-container"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="crypto-prices">
-            <div class="section-header">
-                <h2>Top Cryptocurrency Prices</h2>
-                <button id="refresh-crypto" class="refresh-button">&#x21bb;</button>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Top Cryptocurrency Prices</h2>
+                    <button id="refresh-crypto" class="refresh-button">&#x21bb;</button>
+                </div>
+                <p class="subtitle" style="text-align: center; margin-top: -2rem;">Click to view live chart</p>
+                <div id="crypto-container"></div>
             </div>
-            <p class="subtitle" style="text-align: center; margin-top: -2rem;">Click to view live chart</p>
-            <div id="crypto-container"></div>
         </section>
 
         <section id="contact-me">
-            <h2>Contact me</h2>
-            <p>Feel free to reach out to me through any of the following platforms:</p>
-            <ul>
-                <li><a href="https://github.com/JadDavidIsReal">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/john-angelo-david-698075321/">LinkedIn</a></li>
-                <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">Coursera</a></li>
-            </ul>
+            <div class="container">
+                <h2>Contact me</h2>
+                <p>Feel free to reach out to me through any of the following platforms:</p>
+                <ul>
+                    <li><a href="https://github.com/JadDavidIsReal">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/john-angelo-david-698075321/">LinkedIn</a></li>
+                    <li><a href="https://www.coursera.org/user/6cdd2e843908c67e0d2ac2d609122580">Coursera</a></li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
-        <div id="clock"></div>
-        <p>Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
-        <div class="footer-copyright">
-            2025 Chartreuse©. All Rights Reserved.
+        <div class="container">
+            <div id="clock"></div>
+            <p>Thank you for exploring my portfolio. I'm excited to connect with you and explore the possibilities of collaboration!</p>
+            <div class="footer-copyright">
+                2025 Chartreuse©. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
