@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-color-light: #fdfdfd;
-    --text-color-light: #333;
-    --header-bg-light: rgba(255, 255, 255, 0.85);
-    --card-bg-light: #ffffff;
-    --accent-color-light: #007bff;
-    --accent-color-hover-light: #0056b3;
-    --shadow-color-light: rgba(0, 0, 0, 0.08);
+    /* Blue theme (new "light mode") */
+    --bg-color-light: #0a192f;
+    --text-color-light: #ccd6f6;
+    --heading-color-light: #e6f1ff;
+    --header-bg-light: rgba(10, 25, 47, 0.85);
+    --card-bg-light: #112240;
+    --accent-color-light: #64ffda;
+    --accent-color-hover-light: #1de9b6;
+    --shadow-color-light: rgba(0, 0, 0, 0.2);
 
-    --bg-color-dark: #0a192f;
-    --text-color-dark: #ccd6f6;
-    --heading-color-dark: #e6f1ff;
-    --header-bg-dark: rgba(10, 25, 47, 0.85);
-    --card-bg-dark: #112240;
-    --accent-color-dark: #64ffda;
-    --accent-color-hover-dark: #1de9b6;
-    --shadow-color-dark: rgba(0, 0, 0, 0.2);
+    /* Black theme (new "dark mode") */
+    --bg-color-dark: #000000;
+    --text-color-dark: #f1f1f1;
+    --heading-color-dark: #ffffff;
+    --header-bg-dark: rgba(15, 15, 15, 0.85);
+    --card-bg-dark: #1a1a1a;
+    --accent-color-dark: #00aaff;
+    --accent-color-hover-dark: #0088cc;
+    --shadow-color-dark: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -84,6 +87,11 @@ nav ul li {
     margin: 0 1.5rem;
 }
 
+nav ul li:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
 nav ul li a {
     text-decoration: none;
     font-weight: 500;
@@ -129,7 +137,6 @@ nav ul li a:hover::after {
     padding: 8px 12px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    margin-left: 2rem;
 }
 
 body.light-mode #darkModeToggler {
@@ -168,11 +175,11 @@ section.visible {
 
 
 body.light-mode section {
-    border-color: #dee2e6;
+    border-color: #233554;
 }
 
 body.dark-mode section {
-    border-color: #233554;
+    border-color: #333333;
 }
 
 section:last-of-type {
@@ -187,6 +194,10 @@ section:last-of-type {
     text-align: left;
     border-bottom: none;
     padding-top: 80px; /* offset for header */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/fashion.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .hero-content {
@@ -200,6 +211,10 @@ section:last-of-type {
     line-height: 1.1;
 }
 
+body.light-mode .hero-content h1 {
+    color: var(--heading-color-light);
+}
+
 body.dark-mode .hero-content h1 {
     color: var(--heading-color-dark);
 }
@@ -208,6 +223,10 @@ body.dark-mode .hero-content h1 {
     font-size: clamp(20px, 4vw, 30px);
     font-weight: 500;
     margin: 1rem 0;
+}
+
+body.light-mode .hero-content .subtitle {
+    color: var(--accent-color-light);
 }
 
 body.dark-mode .hero-content .subtitle {
@@ -258,6 +277,10 @@ h2 {
     font-weight: 600;
     position: relative;
     padding-bottom: 1rem;
+}
+
+body.light-mode h2 {
+    color: var(--heading-color-light);
 }
 
 body.dark-mode h2 {
@@ -399,13 +422,13 @@ body.dark-mode #Schoolworks a, body.dark-mode #notable-projects a {
 }
 
 body.light-mode #skills li {
-    background-color: #e9ecef;
-    color: #495057;
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
 }
 
 body.dark-mode #skills li {
-    background-color: #112240;
-    color: #ccd6f6;
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
 }
 
 #skills li:hover {
@@ -455,11 +478,11 @@ footer {
 }
 
 body.light-mode footer {
-    border-color: #dee2e6;
+    border-color: #233554;
 }
 
 body.dark-mode footer {
-    border-color: #233554;
+    border-color: #333333;
 }
 
 hr {
@@ -470,11 +493,11 @@ hr {
 }
 
 body.light-mode hr {
-    background-color: #dee2e6;
+    background-color: #233554;
 }
 
 body.dark-mode hr {
-    background-color: #233554;
+    background-color: #333333;
 }
 
 /* Fade in animations */
@@ -552,11 +575,11 @@ body.dark-mode .modal-content {
 }
 
 body.light-mode .close-button {
-    color: #aaa;
+    color: #777;
 }
 
 body.dark-mode .close-button {
-    color: #777;
+    color: #aaa;
 }
 
 .close-button:hover,
@@ -584,6 +607,10 @@ body.dark-mode .close-button:focus {
 
 #modal-body h1, #modal-body h2, #modal-body h3 {
     text-align: left;
+}
+
+body.light-mode #modal-body h1, body.light-mode #modal-body h2, body.light-mode #modal-body h3 {
+   color: var(--heading-color-light);
 }
 
 body.dark-mode #modal-body h1, body.dark-mode #modal-body h2, body.dark-mode #modal-body h3 {
@@ -632,12 +659,13 @@ body.dark-mode .skill-category {
 }
 
 body.light-mode .skill-category h3 {
-    border-color: #eee;
+    color: var(--heading-color-light);
+    border-color: #233554;
 }
 
 body.dark-mode .skill-category h3 {
     color: var(--heading-color-dark);
-    border-color: #233554;
+    border-color: #333333;
 }
 
 .skill-category ul {
@@ -675,6 +703,49 @@ body.dark-mode .skill-category li::before {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* Quote of the Day Section */
+#quote-of-the-day {
+    text-align: center;
+}
+
+#quote-of-the-day figure {
+    margin: 0;
+    padding: 0;
+}
+
+#quote-of-the-day blockquote {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    padding: 0 2rem;
+}
+
+body.light-mode #quote-of-the-day blockquote {
+    color: var(--text-color-light);
+}
+
+body.dark-mode #quote-of-the-day blockquote {
+    color: var(--text-color-dark);
+}
+
+#quote-of-the-day figcaption {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+body.light-mode #quote-of-the-day figcaption {
+    color: var(--accent-color-light);
+}
+
+body.dark-mode #quote-of-the-day figcaption {
+    color: var(--accent-color-dark);
+}
+
 
 /* Hamburger Menu */
 #hamburger-menu {
