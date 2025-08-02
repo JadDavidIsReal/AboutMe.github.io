@@ -17,14 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check for saved theme in local storage or user's preference
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (savedTheme) {
         setTheme(savedTheme);
-    } else if (prefersDark) {
-        setTheme('dark-mode');
     } else {
-        setTheme('light-mode');
+        setTheme('light-mode'); // Default to blue theme
     }
 
     // Intersection Observer for scroll animations
@@ -147,18 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchNews = () => {
         const newsContainer = document.getElementById('news-container');
         if (newsContainer) {
-            const rssUrl = 'https://www.reuters.com/pf/api/v2/content/articles/channel?channel=business-finance';
-            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+            const apiUrl = 'https://www.reuters.com/pf/api/v2/content/articles/channel?channel=business-finance';
+            fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.items) {
-                        let articles = data.items.slice(0, 5); // Get first 5 articles
+                    if (data && data.result && data.result.articles) {
+                        let articles = data.result.articles.slice(0, 5); // Get first 5 articles
                         let html = '<ul>';
                         articles.forEach(article => {
-                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                            html += `<li><a href="https://www.reuters.com${article.url}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
                         });
                         html += '</ul>';
                         newsContainer.innerHTML = html;
+                    } else {
+                        newsContainer.innerHTML = '<p>Could not load financial news at this time.</p>';
                     }
                 })
                 .catch(error => {
@@ -169,6 +168,60 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchNews();
+
+    // Crypto News Logic
+    const fetchCryptoNews = () => {
+        const newsContainer = document.getElementById('crypto-news-container');
+        if (newsContainer) {
+            const rssUrl = 'https://www.coindesk.com/arc/outboundfeeds/rss/';
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.items) {
+                        let articles = data.items.slice(0, 5);
+                        let html = '<ul>';
+                        articles.forEach(article => {
+                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                        });
+                        html += '</ul>';
+                        newsContainer.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching crypto news:', error);
+                    newsContainer.innerHTML = '<p>Could not load crypto news at this time.</p>';
+                });
+        }
+    };
+
+    fetchCryptoNews();
+
+    // AI News Logic
+    const fetchAiNews = () => {
+        const newsContainer = document.getElementById('ai-news-container');
+        if (newsContainer) {
+            const rssUrl = 'https://techcrunch.com/category/artificial-intelligence/feed/';
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.items) {
+                        let articles = data.items.slice(0, 5);
+                        let html = '<ul>';
+                        articles.forEach(article => {
+                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                        });
+                        html += '</ul>';
+                        newsContainer.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching AI news:', error);
+                    newsContainer.innerHTML = '<p>Could not load AI news at this time.</p>';
+                });
+        }
+    };
+
+    fetchAiNews();
 
     // Crypto Prices Logic
     const fetchCrypto = () => {
