@@ -281,35 +281,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // GitHub Projects
-    const fetchGitHubProjects = () => {
-        const githubContainer = document.getElementById('github-projects');
-        if(githubContainer) {
-            const username = 'JadDavidIsReal';
-            fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
-                .then(response => response.json())
-                .then(repos => {
-                    const pinnedRepos = repos.slice(0, 4); // First 4 repos
-                    let html = '<h3>My GitHub Projects</h3><ul>';
-                    pinnedRepos.forEach(repo => {
-                        html += `
-                            <li>
-                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-                                    <h4>${repo.name}</h4>
-                                    <p>${repo.description || 'No description available.'}</p>
-                                </a>
-                            </li>
-                        `;
-                    });
-                    html += '</ul>';
-                    githubContainer.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Error fetching GitHub projects:', error);
-                    githubContainer.innerHTML = '<p>Could not load GitHub projects at this time.</p>';
-                });
-        }
-    };
-
-    fetchGitHubProjects();
 });
