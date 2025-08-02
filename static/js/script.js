@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(html => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-                    const content = doc.querySelector('main').innerHTML;
+                    const content = doc.querySelector('body').innerHTML;
                     modalBody.innerHTML = content;
                     modal.style.display = 'block';
                 })

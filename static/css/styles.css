@@ -517,18 +517,11 @@ body.dark-mode #clock {
 }
 
 footer {
+    background-color: #000;
+    color: #fff;
     text-align: center;
     padding: 2rem;
     font-size: 0.9rem;
-    border-top: 1px solid;
-}
-
-body.light-mode footer {
-    border-color: #233554;
-}
-
-body.dark-mode footer {
-    border-color: #333333;
 }
 
 .footer-copyright {
@@ -1054,6 +1047,19 @@ body.dark-mode #hamburger-menu span {
     color: var(--accent-color);
 }
 
-#contact-me p {
+#skills h2,
+#notable-projects h2,
+#contact-me h2 {
     text-align: center;
+}
+
+#contact-me p,
+#notable-projects p {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
 }
