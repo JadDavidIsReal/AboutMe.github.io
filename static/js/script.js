@@ -2,11 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggler = document.getElementById('darkModeToggler');
     const body = document.body;
 
+    const updateButtonText = () => {
+        const isDarkMode = body.classList.contains('dark-mode');
+        darkModeToggler.textContent = isDarkMode ? 'Enable Blue Theme' : 'Enable Black Theme';
+    };
     // Function to set theme based on preference
     const setTheme = (theme) => {
         body.classList.remove('dark-mode', 'light-mode');
         body.classList.add(theme);
         localStorage.setItem('theme', theme);
+        updateButtonText();
     };
 
     // Toggle theme
@@ -21,8 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
-        setTheme('light-mode'); // Default to blue theme
+        setTheme('dark-mode'); // Default to dark theme
     }
+    updateButtonText();
 
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('section');
@@ -140,35 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Financial News Logic
-    const fetchNews = () => {
-        const newsContainer = document.getElementById('news-container');
-        if (newsContainer) {
-            const apiUrl = 'https://www.reuters.com/pf/api/v2/content/articles/channel?channel=business-finance';
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.result && data.result.articles) {
-                        let articles = data.result.articles.slice(0, 5); // Get first 5 articles
-                        let html = '<ul>';
-                        articles.forEach(article => {
-                            html += `<li><a href="https://www.reuters.com${article.url}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
-                        });
-                        html += '</ul>';
-                        newsContainer.innerHTML = html;
-                    } else {
-                        newsContainer.innerHTML = '<p>Could not load financial news at this time.</p>';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching financial news:', error);
-                    newsContainer.innerHTML = '<p>Could not load financial news at this time.</p>';
-                });
-        }
-    };
-
-    fetchNews();
-
     // Crypto News Logic
     const fetchCryptoNews = () => {
         const newsContainer = document.getElementById('crypto-news-container');
@@ -178,12 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data.items) {
-                        let articles = data.items.slice(0, 5);
-                        let html = '<ul>';
+                        let articles = data.items.slice(0, 4); // Get first 4 articles
+                        let html = '<div class="news-articles-grid">';
                         articles.forEach(article => {
-                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                            html += `<a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-article">
+                                        <img src="${article.thumbnail}" alt="">
+                                        <h3>${article.title}</h3>
+                                     </a>`;
                         });
-                        html += '</ul>';
+                        html += '</div>';
                         newsContainer.innerHTML = html;
                     }
                 })
@@ -205,12 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data.items) {
-                        let articles = data.items.slice(0, 5);
-                        let html = '<ul>';
+                        let articles = data.items.slice(0, 4); // Get first 4 articles
+                        let html = '<div class="news-articles-grid">';
                         articles.forEach(article => {
-                            html += `<li><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></li>`;
+                            html += `<a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-article">
+                                        <img src="${article.thumbnail}" alt="">
+                                        <h3>${article.title}</h3>
+                                     </a>`;
                         });
-                        html += '</ul>';
+                        html += '</div>';
                         newsContainer.innerHTML = html;
                     }
                 })
@@ -227,20 +210,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const fetchCrypto = () => {
         const cryptoContainer = document.getElementById('crypto-container');
         if (cryptoContainer) {
-            const cryptoIds = 'bitcoin,ethereum,ripple,cardano,solana';
+            const cryptoIds = 'bitcoin,ethereum,ripple,cardano,solana,dogecoin,shiba-inu';
             fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cryptoIds}&vs_currencies=usd`)
                 .then(response => response.json())
                 .then(data => {
                     let html = '<div class="crypto-grid">';
                     for (const id in data) {
                         const price = data[id].usd;
-                        html += `<div class="crypto-item">
+                        const symbol = id.toUpperCase().replace('-', '');
+                        html += `<div class="crypto-item" data-symbol="${symbol}">
                                     <span class="crypto-name">${id.charAt(0).toUpperCase() + id.slice(1)}</span>
                                     <span class="crypto-price">$${price.toLocaleString()}</span>
                                  </div>`;
                     }
                     html += '</div>';
                     cryptoContainer.innerHTML = html;
+
+                    // Add click listeners to crypto items
+                    const cryptoItems = document.querySelectorAll('.crypto-item');
+                    cryptoItems.forEach(item => {
+                        item.addEventListener('click', () => {
+                            const symbol = item.getAttribute('data-symbol');
+                            openChartModal(symbol);
+                        });
+                    });
                 })
                 .catch(error => {
                     console.error('Error fetching crypto prices:', error);
@@ -250,4 +243,28 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fetchCrypto();
+
+    // Chart Modal Logic
+    const chartModal = document.getElementById('chartModal');
+    const chartContainer = document.getElementById('chart-container');
+    const closeChartModal = chartModal.querySelector('.close-button');
+
+    const openChartModal = (symbol) => {
+        chartContainer.innerHTML = `<iframe
+            height="400"
+            style="width: 100%;"
+            src="https://www.tradingview.com/widgetembed/?symbol=${symbol}USD&interval=1D&hidesidetoolbar=0&symboledit=0&saveimage=0&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=user_portfolio&utm_medium=widget&utm_campaign=chart&utm_term=${symbol}USD"
+        ></iframe>`;
+        chartModal.style.display = 'block';
+    };
+
+    closeChartModal.addEventListener('click', () => {
+        chartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target == chartModal) {
+            chartModal.style.display = 'none';
+        }
+    });
 });
