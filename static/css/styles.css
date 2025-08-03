@@ -2,11 +2,11 @@
 
 :root {
     /* Light Mode */
-    --bg-color-light: #f4f7f5;
-    --text-color-light: #333;
+    --bg-color-light: #000000;
+    --text-color-light: #969696;
     --heading-color-light: #111;
-    --header-bg-light: rgba(255, 255, 255, 0.85);
-    --card-bg-light: #fff;
+    --header-bg-light: rgba(0, 183, 138, 0.85);
+    --card-bg-light: #910000;
     --accent-color-light: #007bff;
     --accent-color-hover-light: #0056b3;
     --shadow-color-light: rgba(0, 0, 0, 0.1);
@@ -43,7 +43,6 @@ body.dark-mode {
 }
 
 main {
-    padding: 0 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
