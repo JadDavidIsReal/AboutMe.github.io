@@ -484,22 +484,82 @@ body.dark-mode #skills li {
     transform: scale(1.05);
 }
 
-#contact-me ul {
+#contact-me ul.social-links {
     list-style-type: none;
     padding: 0;
     text-align: center;
+    margin-top: 2rem;
 }
 
-#contact-me li {
+#contact-me ul.social-links li {
     display: inline-block;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
-#contact-me a {
-    font-size: 2rem;
-    transition: color 0.3s, transform 0.2s;
+#contact-me .social-icon {
     display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+#contact-me .social-icon i {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+#contact-me .social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    border-radius: 50%;
+}
+
+#contact-me .social-icon:hover::before {
+    transform: scale(1);
+}
+
+#contact-me .social-icon:hover i {
+    color: #0a192f; /* Dark background color */
+}
+
+/* GitHub */
+body.dark-mode #contact-me .fa-github { color: #ccd6f6; }
+body.light-mode #contact-me .fa-github { color: #ffffff; }
+#contact-me .fa-github:hover::before { background-color: #ccd6f6; }
+
+/* LinkedIn */
+body.dark-mode #contact-me .fa-linkedin { color: #64ffda; }
+body.light-mode #contact-me .fa-linkedin { color: #007bff; }
+#contact-me .fa-linkedin:hover::before { background-color: #64ffda; }
+
+/* WhatsApp */
+body.dark-mode #contact-me .whatsapp { color: #64ffda; }
+body.light-mode #contact-me .whatsapp { color: #007bff; }
+#contact-me .whatsapp:hover::before { background-color: #64ffda; }
+
+/* Viber */
+body.dark-mode #contact-me .viber { color: #64ffda; }
+body.light-mode #contact-me .viber { color: #007bff; }
+#contact-me .viber:hover::before { background-color: #64ffda; }
+
+/* Discord */
+body.dark-mode #contact-me .discord { color: #64ffda; }
+body.light-mode #contact-me .discord { color: #007bff; }
+#contact-me .discord:hover::before { background-color: #64ffda; }
 
 body.light-mode #contact-me a {
     color: var(--text-color-light);
