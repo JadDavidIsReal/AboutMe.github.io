@@ -27,8 +27,39 @@
         </nav>
     </header>
     <main>
+        <section id="news">
+            <div class="container">
+                <div class="section-header">
+                    <h2>News</h2>
+                    <button id="refresh-news" class="refresh-button">&#x21bb;</button>
+                </div>
+                <p class="subtitle">Below are the latest tech news. click to open</p>
+                <div class="news-grid">
+                    <div class="news-category">
+                        <h3>Cryptocurrency News</h3>
+                        <div id="crypto-news-container"></div>
+                    </div>
+                    <div class="news-category">
+                        <h3>AI News</h3>
+                        <div id="ai-news-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="crypto-prices">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Top Cryptocurrency Prices</h2>
+                    <button id="refresh-crypto" class="refresh-button">&#x21bb;</button>
+                </div>
+                <p class="subtitle" style="text-align: center; margin-top: -2rem;">Click to view live chart</p>
+                <div id="crypto-container"></div>
+            </div>
+        </section>
         <section id="hero">
             <div class="container">
+                <div id="quote-container"></div>
                 <div class="hero-content">
                     <h1 class="fade-in-delay1">Chartreuse</h1>
                     <p class="subtitle fade-in-delay2">By Jad David</p>
@@ -45,52 +76,6 @@
                 <hr>
                 <p>I am a detail-oriented individual with a strong passion for web development, design and data. Currently pursuing a degree in Information Technology, I am dedicated to creating innovative solutions and exceeding expectations. My journey in tech began with a fascination for its potential to improve lives, and I've since developed a strong foundation in software development, data analysis, and hardware.</p>
                 <p>I believe that technology should be both functional and a joy to use. This philosophy guides my approach to every project I undertake. I invite you to explore my work and see this commitment to excellence in action.</p>
-            </div>
-        </section>
-        <section id="Schoolworks">
-            <div class="container">
-                <h2>My Schoolworks</h2>
-                <p>Below is a showcase of my projects that I've worked on at school:</p>
-                <ul>
-                    <li>
-                        <a href="templates/School Files/recipees.html" class="project-link">
-                            <img src="static/images/Recipee.jpg" alt="Recipees" width="250" height="250">
-                            <h3>Healthy Recipes</h3>
-                            <p>A website offering delicious and nutritious recipes for health enthusiasts.</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="templates/School Files/fashionn.html" class="project-link">
-                            <img src="static/images/fashion.jpg" alt="Fashion Blog" width="250" height="250">
-                            <h3>Fashion Blog</h3>
-                            <p>A blog providing insider tips and trends from the fashion world.</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="templates/School Files/indexact2.html" class="project-link">
-                            <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/travel.jpeg" alt="Olivia Woodruff's Portfolio Screenshot" width="250" height="250">
-                            <h3>Olivia Woodruff's Portfolio</h3>
-                            <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="notable-projects">
-            <div class="container">
-                <h2>Notable Projects</h2>
-                <p>Here are some of the projects I've worked on worth showcasing:</p>
-                <ul>
-                    <li>
-                        <a href="https://jaddavidisreal.github.io/chartbot/">Chartbot: An AI Chatbot (Requires a valid OpenAI API Key)</a>
-                    </li>
-                    <li>
-                        <a href="https://cert.efset.org/kbk3sf">My Official EFSET Certificate</a>
-                    </li>
-                    <li>
-                        <a href="https://tieryder88.wixsite.com/chartreuseofficial">My Old Wix Site</a>
-                    </li>
-                </ul>
             </div>
         </section>
         <section id="skills">
@@ -144,37 +129,52 @@
                 </div>
             </div>
         </section>
-        <section id="news">
+        <section id="Schoolworks">
             <div class="container">
-                <div class="section-header">
-                    <h2>News</h2>
-                    <button id="refresh-news" class="refresh-button">&#x21bb;</button>
-                </div>
-                <p class="subtitle">Below are the latest tech news. click to open</p>
-                <div class="news-grid">
-                    <div class="news-category">
-                        <h3>Cryptocurrency News</h3>
-                        <div id="crypto-news-container"></div>
-                    </div>
-                    <div class="news-category">
-                        <h3>AI News</h3>
-                        <div id="ai-news-container"></div>
-                    </div>
-                </div>
+                <h2>My Schoolworks</h2>
+                <p class="project-showcase-description">Below is a showcase of my projects that I've worked on at school:</p>
+                <ul>
+                    <li>
+                        <a href="templates/School Files/recipees.html" class="project-link">
+                            <img src="static/images/spicy roasted chickpea salad bowl.jpg" alt="Recipees" width="250" height="250">
+                            <h3>Healthy Recipes</h3>
+                            <p>A website offering delicious and nutritious recipes for health enthusiasts.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="templates/School Files/fashionn.html" class="project-link">
+                            <img src="static/images/fashionista.jpg" alt="Fashion Blog" width="250" height="250">
+                            <h3>Fashion Blog</h3>
+                            <p>A blog providing insider tips and trends from the fashion world.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="templates/School Files/indexact2.html" class="project-link">
+                            <img src="static/images/burberry.jpg" alt="Olivia Woodruff's Portfolio Screenshot" width="250" height="250">
+                            <h3>Olivia Woodruff's Portfolio</h3>
+                            <p>A professional portfolio showcasing the work of designer Olivia Woodruff.</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
-
-        <section id="crypto-prices">
+        <section id="notable-projects">
             <div class="container">
-                <div class="section-header">
-                    <h2>Top Cryptocurrency Prices</h2>
-                    <button id="refresh-crypto" class="refresh-button">&#x21bb;</button>
-                </div>
-                <p class="subtitle" style="text-align: center; margin-top: -2rem;">Click to view live chart</p>
-                <div id="crypto-container"></div>
+                <h2>Notable Projects</h2>
+                <p>Here are some of the projects I've worked on worth showcasing:</p>
+                <ul>
+                    <li>
+                        <a href="https://jaddavidisreal.github.io/chartbot/">Chartbot: An AI Chatbot (Requires a valid OpenAI API Key)</a>
+                    </li>
+                    <li>
+                        <a href="https://cert.efset.org/kbk3sf">My Official EFSET Certificate</a>
+                    </li>
+                    <li>
+                        <a href="https://tieryder88.wixsite.com/chartreuseofficial">My Old Wix Site</a>
+                    </li>
+                </ul>
             </div>
         </section>
-
         <section id="contact-me">
             <div class="container">
                 <h2>Contact me</h2>
