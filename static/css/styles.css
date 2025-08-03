@@ -371,6 +371,10 @@ body.dark-mode .profile-image {
     line-height: 1.7;
 }
 
+#Schoolworks {
+    display: none;
+}
+
 #Schoolworks ul, #notable-projects ul {
     list-style-type: none;
     padding: 0;
@@ -1011,7 +1015,7 @@ body.dark-mode #hamburger-menu span {
     }
 
     .hero-content {
-        text-align: left;
+        text-align: center;
     }
 }
 
