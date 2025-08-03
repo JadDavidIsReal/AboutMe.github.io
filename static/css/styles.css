@@ -3,10 +3,10 @@
 :root {
     /* Light Mode */
     --bg-color-light: #000000;
-    --text-color-light: #969696;
-    --heading-color-light: #111;
-    --header-bg-light: rgba(0, 183, 138, 0.85);
-    --card-bg-light: #910000;
+    --text-color-light: #dae1d9;
+    --heading-color-light: #ffffff;
+    --header-bg-light: rgba(34, 144, 117, 0.636);
+    --card-bg-light: #005039c2;
     --accent-color-light: #007bff;
     --accent-color-hover-light: #0056b3;
     --shadow-color-light: rgba(0, 0, 0, 0.1);
@@ -225,7 +225,7 @@ section:last-of-type {
     text-align: left;
     border-bottom: none;
     padding-top: 80px; /* offset for header */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/fashion.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.779), rgba(0, 0, 0, 0.5)), url('../images/datapic.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
