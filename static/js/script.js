@@ -140,27 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Quote of the day
-    const fetchQuote = () => {
-        const quoteContainer = document.getElementById('quote-container');
-        if (quoteContainer) {
-            fetch('https://api.goprogram.ai/inspiration')
-                .then(response => response.json())
-                .then(data => {
-                    quoteContainer.innerHTML = `
-                        <p id="quote-text">"${data.quote}"</p>
-                        <p id="quote-author">- ${data.author}</p>
-                    `;
-                })
-                .catch(error => {
-                    console.error('Error fetching quote:', error);
-                    quoteContainer.innerHTML = '<p>Could not load quote at this time.</p>';
-                });
-        }
-    };
-
-    fetchQuote();
-
     // Crypto News Logic
     const fetchCryptoNews = () => {
         const newsContainer = document.getElementById('crypto-news-container');
