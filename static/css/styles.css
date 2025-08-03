@@ -43,8 +43,14 @@ body.dark-mode {
 }
 
 main {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 header {
@@ -225,7 +231,7 @@ section:last-of-type {
     text-align: left;
     border-bottom: none;
     padding-top: 80px; /* offset for header */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.779), rgba(0, 0, 0, 0.5)), url('../images/datapic.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.779), rgba(0, 0, 0, 0.5)), url('../images/pexels-bertellifotografia-16094056.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -429,6 +435,10 @@ body.dark-mode #Schoolworks a, body.dark-mode #notable-projects a {
     margin-top: 1rem;
 }
 
+.project-showcase-description {
+    text-align: center;
+}
+
 #notable-projects a {
     padding: 1.5rem;
     font-weight: 600;
@@ -440,7 +450,7 @@ body.dark-mode #Schoolworks a, body.dark-mode #notable-projects a {
     padding: 0;
     max-width: 800px;
     margin: 2rem auto 0;
-    text-align: center;
+    text-align: left;
 }
 
 #skills li {
@@ -1001,7 +1011,7 @@ body.dark-mode #hamburger-menu span {
     }
 
     .hero-content {
-        text-align: center;
+        text-align: left;
     }
 }
 
