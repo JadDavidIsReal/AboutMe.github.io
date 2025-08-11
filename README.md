@@ -1,19 +1,36 @@
-# Personal Portfolio Website
+# John Angelo P. David — Remote Web & Tech Specialist
 
-This is the source code for my personal portfolio website.
+**BSIT Student • Frontend Developer • Virtual Assistant with a Tech Edge**
 
-## Description
+---
 
-A clean, modern, and fully responsive personal portfolio website built with vanilla HTML, CSS, and JavaScript. The site features a light and dark mode, a modal window for project viewing, and a responsive design that works on all devices.
+## About Me
+I am a detail-oriented BSIT student based in the Philippines, passionate about building user-friendly websites, streamlining workflows, and transforming data into actionable insights.  
+With hands-on experience in frontend development, technical support, and virtual assistance, I bring both technical skill and adaptability to every project I work on.
 
-## Features
+---
 
-- **Responsive Design:** Looks great on desktops, tablets, and mobile phones.
-- **Dark Mode:** Easy on the eyes in low-light conditions.
-- **Seamless Project Viewing:** Projects open in a modal window without leaving the page.
-- **Pure Vanilla JS:** No external libraries or frameworks were used for the core functionality, ensuring the site is lightweight and fast.
-- **Animated & Interactive:** Subtle animations and transitions to improve user experience.
+## Skills & Tools
 
-## How to View
+**Web Development:** HTML, CSS, JavaScript, ReactJS, Tailwind CSS, WordPress, Wix  
+**Data & Analytics:** Google Sheets, Excel, Power BI, BigQuery  
+**Other Tools:** Google Workspace, Notion, Slack, Canva, SEO tools  
+**Programming Languages:** PHP, JavaScript, TypeScript, HTML/CSS
 
-Simply open the `index.html` file in a web browser to view the portfolio.
+---
+
+## Featured Projects
+
+### [AUNI v1](https://github.com/JadDavidIsReal/AUNIv1) WIP
+A browser-based voice assistant built with vanilla HTML, CSS, and JavaScript.  
+Features real-time speech-to-text, AI-powered responses, and a minimalist UI.
+
+### HSMS (Health Services Management System) WIP
+A school project in progress using Laravel, TypeScript, ReactJS, and Tailwind CSS.  
+Aims to improve healthcare service workflows and record management.
+
+---
+
+## Contact Me
+- **Email:** tieryder88@gmail.com  
+- **GitHub:** [github.com/JadDavidIsReal](https://github.com/JadDavidIsReal)  
