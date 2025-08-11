@@ -90,3 +90,18 @@ body {
     padding: 4rem 2rem;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .about-me-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me-section img {
+        margin-bottom: 2rem;
+    }
+
+    .about-me-section, .projects-section, .contact-section {
+        padding: 2rem 1rem;
+    }
+}
