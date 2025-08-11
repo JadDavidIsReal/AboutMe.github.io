@@ -1014,8 +1014,24 @@ body.dark-mode #hamburger-menu span {
 }
 
 /* Responsive Styles */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .skills-grid, #Schoolworks ul, #notable-projects ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     header {
+        padding: 1rem;
         justify-content: flex-end;
     }
 
@@ -1080,6 +1096,48 @@ body.dark-mode #hamburger-menu span {
 
     .hero-content {
         text-align: center;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .skills-grid, .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact-me .social-icon {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1.5rem;
     }
 }
 
