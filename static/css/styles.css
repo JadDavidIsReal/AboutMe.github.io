@@ -258,9 +258,11 @@ body.dark-mode .hero-content h1 {
 
 .hero-content .subtitle {
     font-size: clamp(20px, 4vw, 30px);
+    text-align: center;
     font-weight: 500;
     margin: 1rem 0;
 }
+
 
 .subtitle-left {
     text-align: left;
