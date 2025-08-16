@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         let articles = data.items.slice(0, 4); // Get first 4 articles
                         let html = '<div class="news-articles-grid">';
                         articles.forEach(article => {
-                            const imageUrl = article.enclosure && article.enclosure.link ? article.enclosure.link : 'static/images/news-placeholder.jpg';
+                            const imageUrl = article.thumbnail || (article.enclosure && article.enclosure.link) || 'static/images/news-placeholder.jpg';
                             html += `<a href="${article.link}" target="_blank" rel="noopener noreferrer" class="news-article">
                                         <img src="${imageUrl}" alt="">
                                         <h3>${article.title}</h3>
