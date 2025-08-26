@@ -1,4 +1,4 @@
-# John Angelo P. David — Remote Web & Tech Specialist
+# Chart — Remote Web & Tech Specialist
 
 **BSIT Student • Frontend Developer • Virtual Assistant with a Tech Edge**
 
